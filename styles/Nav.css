@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-container{
+  @apply flex justify-evenly mx-40 text-[16px] mt-10
+}
+
+.small-nav-container{
+  @apply w-[100%] h-screen bg-black flex flex-col text-white
+}
+
+
+
+
+@media(max-width: 500px){
+
+}
