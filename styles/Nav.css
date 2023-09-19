@@ -7,11 +7,16 @@
 }
 
 .small-nav-container{
-  @apply w-[100%] h-screen bg-black flex flex-col text-white
+  @apply w-[100%] h-screen flex flex-col z-50 bg-white justify-center text-2xl items-center font-semibold
 }
 
+.small-nav-container li{
+  @apply my-3
+}
 
-
+.small-nav-container li:hover{
+  @apply text-blue-600
+}
 
 @media(max-width: 500px){
 

@@ -26,9 +26,9 @@ const Navbar = () => {
       {window.innerWidth < 800 ? (
         <div>
           {showMenu ? (
-            <div>
-              <button onClick={toggleMenu}>Close Menu</button>
-              <ul className="small-nav-container">
+            <div className="">
+              <button className="absolute right-5 top-5 text-2xl z-20" onClick={toggleMenu}>X</button>
+              <ul className="small-nav-container absolute z-10">
                 <li>Home</li>
                 <li>About</li>
                 <li>Vehicle Models</li>
@@ -38,11 +38,14 @@ const Navbar = () => {
               </ul>
             </div>
           ) : (
-            <button onClick={toggleMenu}>Toggle Menu</button>
+            <div className="flex justify-end mt-5 mr-5">
+                <button  onClick={toggleMenu}>Toggle Menu</button>
+            </div>
+            
           )}
         </div>
       ) : (
-        <ul className="nav-container">
+        <ul className="nav-container ">
           <li>Home</li>
           <li>About</li>
           <li>Vehicle Models</li>
