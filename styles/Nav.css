@@ -18,6 +18,19 @@
   @apply text-blue-600
 }
 
+.menu-button {
+  @apply bg-none cursor-pointer border-none ;
+}
+
+.menu-button:hover .menu-line{
+  @apply bg-blue-600 border-blue-600 transition-colors duration-500
+}
+
+.menu-line {
+  @apply w-5 h-[3px] bg-[#333] my-[5px]  border border-[#333] rounded-2xl;
+
+}
+
 @media(max-width: 500px){
 
 }

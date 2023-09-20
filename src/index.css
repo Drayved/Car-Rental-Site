@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body,
+html{
+    @apply overflow-x-hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    z-index: -2;
+}

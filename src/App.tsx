@@ -4,6 +4,7 @@ import { useState, createContext} from "react"
 import Layout from "./components/Layout"
 import Landing from "./components/Landing";
 import "../styles/Nav.css"
+import "../styles/Landing.css"
 
 const defaultAuthValue = null
 
