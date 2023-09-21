@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .nav-container{
-  @apply flex justify-evenly mx-40 text-[16px] mt-10
+  @apply flex justify-evenly absolute left-0 right-0 mx-auto gap-5 w-[50%] text-[15px] mt-12 font-bold
 }
 
 .small-nav-container{
-  @apply w-[100%] h-screen flex flex-col z-50 bg-white justify-center text-2xl items-center font-semibold
+  @apply w-[100%] fixed  right-0 left-0 top-0 bottom-0  flex flex-col z-20 bg-white justify-center text-2xl items-center font-semibold
 }
 
 .small-nav-container li{
