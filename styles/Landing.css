@@ -8,13 +8,13 @@
 }
 
 .top-button-container{
-    @apply mt-5 flex flex-col items-center text-white text-lg font-bold 
+    @apply mt-5 flex items-center text-white text-lg font-bold gap-5
 }
 
 /* top-buttons */
 
 .book-ride-btn{
-    @apply bg-blue-500 w-60 py-3 h-[3.5rem] rounded-sm border-blue-500 border-2 mb-6 md:mb-0
+    @apply bg-blue-500 w-60 py-3 h-[3.5rem] rounded-sm border-blue-500 border-2 md:mb-6 md:mb-0
 }
 
 .book-ride-btn:hover{
@@ -87,3 +87,13 @@
     border-radius: 70% 20% 50% 30%;
   }
   
+
+  @media(max-width:500px){
+    .top-button-container{
+        @apply flex-col
+    }
+
+    .car-images{
+        @apply w-screen
+    }
+  }

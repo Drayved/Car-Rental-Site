@@ -8,7 +8,7 @@ const Landing = () => {
 
         {/* Hero section */}
 
-            <div className="top-section-container w-[90%] mx-auto md:text-left md:ml-[10%] 2xl:ml-[25%]">
+            <div className="top-section-container w-[95%] mx-auto md:text-left md:ml-[10%] 2xl:ml-[25%]">
                 <img className="absolute right-0 top-0 z-10 pointer-events-none hidden md:flex h-[70%] w-[35%] min-w-[35rem] opacity-50" src="/images/hero-bg-3.png" alt="" />
                 <div className="flex just">
                     <div className="flex flex-col md:min-w-[25rem] relative z-10">

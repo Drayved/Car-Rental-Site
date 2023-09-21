@@ -107,13 +107,11 @@ const ChooseCar = () => {
                     ))}
                     </ul>
                 </div>
-                <div className="flex justify-center gap-20">
+                <div className="flex flex-col items-center md:flex-row justify-center gap-20">
 
                     
-                    <img className="w-[30%]" src={selectedVehicle.imageSrc} alt={selectedVehicle.name} />
+                    <img className=" car-imgs w-[100%] md:w-[80%] lg:w-[50%] max-w-[40rem]" src={selectedVehicle.imageSrc} alt={selectedVehicle.name} />
                     <div className=" flex flex-row justify-between ">
-                        
-                        
                         <div>
                             <table>
                                 <thead>
