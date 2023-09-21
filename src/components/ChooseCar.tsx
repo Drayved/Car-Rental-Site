@@ -1,5 +1,18 @@
 import { useState } from "react"
 
+interface Vehicle {
+    name: string;
+    imageSrc: string;
+    details: {
+      Make: string;
+      Model: string;
+      Year: number;
+      Doors: number;
+      Transmission: string;
+      Fuel: string;
+    };
+  }
+
 const vehicles = [
     {
       name: "Toyota Camry",
@@ -80,7 +93,7 @@ const ChooseCar = () => {
 
     const [selectedVehicle, setSelectedVehicle] = useState(vehicles[0]);
 
-    const handleVehicleSelect = (vehicle) => {
+    const handleVehicleSelect = (vehicle: Vehicle) => {
       setSelectedVehicle(vehicle);
     };
 
