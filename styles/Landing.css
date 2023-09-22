@@ -73,20 +73,32 @@
 /* Blobs */
 
 .first-img {
-    @apply bg-[#afe0f7] w-32 h-32;
+    @apply bg-[#bee9fdaa] w-32 h-32;
     border-radius: 50% 30% 70% 50%;
   }
   
   .second-img {
-    @apply bg-[#afe0f7]  w-32 h-32;
+    @apply bg-[#bee9fdaa]  w-32 h-32;
     border-radius: 30% 50% 20% 70%;
   }
   
   .third-img {
-    @apply bg-[#afe0f7]  w-32 h-32;
+    @apply bg-[#bee9fdaa]  w-32 h-32;
     border-radius: 70% 20% 50% 30%;
   }
   
+
+  .vehicle-btns:hover,
+  .vehicle-btns:focus{
+    @apply bg-blue-600 text-white transition-colors duration-500
+  }
+
+  @media(max-width:1280px){
+    .car-small-screen{
+        @apply flex
+    }
+  }
+
 
   @media(max-width:500px){
     .top-button-container{
@@ -97,3 +109,9 @@
         @apply w-screen
     }
   }
+
+@media(min-width:2100px){
+    .car-imgs{
+        @apply max-w-[50rem]
+    }
+}

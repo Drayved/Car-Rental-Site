@@ -8,4 +8,10 @@ html{
     font-family: 'Roboto', sans-serif;
     background-color: #fff;
     z-index: -2;
+    overflow: auto;
+    transition: width 5.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+}
+
+.container{
+    transition: width 0.3s ease, height 0.3s ease;
 }

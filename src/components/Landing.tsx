@@ -1,5 +1,6 @@
 import BookForm from "./BookForm"
 import ChooseCar from "./ChooseCar"
+import ChooseUs from "./ChooseUs"
 
 const Landing = () => {
 
@@ -9,7 +10,7 @@ const Landing = () => {
         {/* Hero section */}
 
             <div className="top-section-container w-[95%] mx-auto md:text-left md:ml-[10%] 2xl:ml-[25%]">
-                <img className="absolute right-0 top-0 z-10 pointer-events-none hidden md:flex h-[70%] w-[35%] min-w-[35rem] opacity-50" src="/images/hero-bg-3.png" alt="" />
+                <img className="absolute right-0 top-0 z-10 pointer-events-none hidden md:flex h-[65%]  min-w-[30rem] opacity-50" src="/images/hero-bg.png" alt="" />
                 <div className="flex just">
                     <div className="flex flex-col md:min-w-[25rem] relative z-10">
                         <h3 className="text-2xl font-bold mb-3 z-20 relative">Plan your trip now</h3>
@@ -46,7 +47,7 @@ const Landing = () => {
 
             {/* Book form section */}
 
-            <div className="flex flex-col justify-center mt-52">
+            <div className="flex flex-col justify-center mt-40">
                 <BookForm />
             </div>
 
@@ -99,6 +100,20 @@ const Landing = () => {
                 <ChooseCar />
             </div>
 
+            {/* Save banner section */}
+
+            <div className="mt-48 bg-[#2d2d2d] text-white w-screen h-52 text-center flex flex-col justify-center">
+                <h1 className="text-5xl">Save Big With Our Cheap Car Rental!</h1>
+                <p className="text-2xl mt-5">Top Airports. Local Supplies. 
+                    <span className="text-blue-600"> 24/7</span> Support
+                </p>
+            </div>
+
+            {/* Choose us section */}
+
+            <div className="mt-40">
+                <ChooseUs />
+            </div>
         </>
     )
    
