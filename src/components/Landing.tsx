@@ -1,6 +1,7 @@
 import BookForm from "./BookForm"
 import ChooseCar from "./ChooseCar"
 import ChooseUs from "./ChooseUs"
+import Faq from "./Faq"
 
 const Landing = () => {
 
@@ -66,7 +67,9 @@ const Landing = () => {
                         </div>
                         <div className="text-center">
                             <h1 className="mt-5 text-2xl font-bold mb-3">Select Car</h1>
-                            <p className="text-gray-500 w-[70%] text-lg lg:w-[50%] mx-auto" >We offer a wide range of vehicles, so whatever your driving needs, you can find the perfect one for you</p>
+                            <p className="text-gray-500 w-[70%] text-lg lg:w-[50%] mx-auto" >
+                                We offer a wide range of vehicles, so whatever your driving needs, you can find the perfect one for you
+                            </p>
                         </div>
                         
                     </div>
@@ -113,6 +116,11 @@ const Landing = () => {
 
             <div className="mt-40">
                 <ChooseUs />
+            </div>
+
+            {/* FAQ section */}
+            <div className="mt-40">
+                <Faq />
             </div>
         </>
     )
