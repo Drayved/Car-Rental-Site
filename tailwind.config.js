@@ -9,6 +9,11 @@ export default {
       backgroundImage: {
         'form': "url('/images/form-bg.png')",
       },
+      screens: {
+        xxs: "360px", 
+        xs:"400px",
+        small:"450px"
+      },
     },
   },
   plugins: [],

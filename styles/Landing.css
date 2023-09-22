@@ -4,7 +4,7 @@
 
 
 .top-section-container{
-    @apply mt-96 text-center 
+    @apply md:mt-[30vh] text-center 
 }
 
 .top-button-container{
@@ -93,6 +93,27 @@
     @apply bg-blue-600 text-white transition-colors duration-500
   }
 
+  .faq-item {
+    cursor: pointer;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    height: 3rem;
+  }
+  
+ 
+  
+  .faq-item label {
+    @apply block font-bold p-4 ;
+  }
+
+ 
+  @media(min-width:350px){
+    .faq-item .open{
+        @apply h-[5rem]
+    }
+}
+
+
   @media(max-width:1280px){
     .car-small-screen{
         @apply flex
@@ -115,3 +136,4 @@
         @apply max-w-[50rem]
     }
 }
+

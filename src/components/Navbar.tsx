@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <div className="z-20 absolute right-0 left-0 mx-auto text-center top-0 flex ">
-      <div className="absolute mt-5 ml-5 lg:ml-[10%] flex">
+      <div className="absolute mt-5 ml-5 2xl:ml-[20%] md:ml-[5%] flex">
         <img className="w-20 mr-2 " src="/images/blue-car.png" alt="" />
         <div>
           <h1 className="text-2xl font-bold mt-3">CAR</h1>
@@ -108,7 +108,7 @@ const Navbar = () => {
           )} 
       </div>
       ) : (
-        <div className="absolute right-10 top-10 md:right-[5%] lg:right-[5%] xl:right-[10%]">
+        <div className="absolute right-10 top-10 md:right-[5%] lg:right-[5%] 2xl:right-[20%]">
           <button onClick={toggleSignIn} className="mr-6 font-bold">Sign In</button>
           <button onClick={toggleRegister} className="bg-blue-600 text-white h-10 w-28 font-bold rounded-sm shadow-blue-600 shadow-md">Register</button>
           {showSignIn && (
