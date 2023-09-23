@@ -97,13 +97,13 @@
     cursor: pointer;
     overflow: hidden;
     transition: height 0.5s ease-in-out;
-    height: 3rem;
+    height: 5rem;
   }
   
  
   
   .faq-item label {
-    @apply block font-bold p-4 ;
+    @apply block font-bold pl-8 py-5 text-lg;
   }
 
  

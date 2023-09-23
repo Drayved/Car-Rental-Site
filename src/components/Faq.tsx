@@ -31,18 +31,19 @@ const Faq = () => {
           Website: Answers to Common Concerns and Inquiries.
         </p>
       </div>
-      <div className="w-[90%] mx-auto mt-12 shadow-md shadow-black max-w-[50rem]">
+      <div className="w-[90%] mx-auto mt-12 shadow-sm shadow-gray-300 max-w-[50rem]">
         <div
           onClick={() => handleSelect("option1")}
-          className={`faq-item h-20 ${
-            selectedOption === "option1" ? "open h-[21.5rem] xl:h-[15rem] xxs:h-[19.8rem] xs:h-[17rem] sm:h-[14rem]" : ""
+          className={`faq-item  ${
+            selectedOption === "option1" ? "open h-[25.5rem] xxs:h-[24rem] xs:h-[22rem] xsmall:h-[20rem] small:h-[18.5rem] medium:h-[15.5rem] sm:h-[15.3rem] md:h-[14rem] " : ""
           }`}
         >
-          <label className={`${selectedOption === "option1" ? "text-white bg-blue-500 h-[4.75rem] shadow-xl " : ""}`}>
-            What is special about comparing rental car deals?
+          <label className={`${selectedOption === "option1" ? "text-white bg-blue-500 shadow-blue-300 shadow-lg " : ""}`}>
+            1. What is special about comparing rental car deals?
+            </label>
             {selectedOption === "option1" && (
             
-              <p className="xxs:mt-10 small:mt-16 sm:mt-16 lg:mt-16 z-50 text-base text-gray-500 font-normal w-[90%] pb-5  k">
+              <p className=" flex items-center justify-center ml-5 mt-3 xs:mt-5 small:mt-5 sm:mt-7 lg:mt-8 z-50 text-base text-gray-500 font-normal w-[90%] pb-5">
                 Comparing rental car deals is important as it helps find the best deal that
                 fits your budget and requirements, ensuring you get the most value for your
                 money. By comparing various options, you can find deals that offer lower
@@ -52,37 +53,48 @@ const Faq = () => {
               </p>
             
             )}
-          </label>
+          
         
           
         </div>
         <div
           onClick={() => handleSelect("option2")}
           className={`faq-item ${
-            selectedOption === "option2" ? "open bg-blue-600" : ""
+            selectedOption === "option2" ? "open  h-[25.5rem] xxs:h-[24rem] xs:h-[22rem] xsmall:h-[20rem] small:h-[18.5rem] medium:h-[15.5rem] sm:h-[15.3rem] md:h-[14rem]" : ""
           }`}
         >
-            <label className={`${selectedOption === "option2" ? "text-white" : ""}`}>
-                 How do I find the car rental deals?
+            <label className={`${selectedOption === "option2" ? "text-white bg-blue-500 shadow-lg shadow-blue-200" : ""}`}>
+                2. How do I find the car rental deals?
             </label>
           {selectedOption === "option2" && (
             <div className="dropdown">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <p className=" flex items-center justify-center ml-5 mt-3 xs:mt-5 small:mt-5 sm:mt-7 lg:mt-8 z-50 text-base text-gray-500 font-normal w-[90%] pb-5">
+                You can find car rental deals by researching online and comparing prices from different rental companies. 
+                Websites such as Expedia, Kayak, and Travelocity allow you to compare prices and view available
+                rental options. It is also recommended to sign up for email newsletters and follow rental car 
+                companies on social media to be informed of any special deals or promotions.
+            </p>
             </div>
           )}
         </div>
         <div
           onClick={() => handleSelect("option3")}
           className={`faq-item ${
-            selectedOption === "option3" ? "open bg-blue-600" : ""
+            selectedOption === "option3" ? "open h-[28.5rem] xxs:h-[25rem] xs:h-[25rem] xsmall:h-[22rem] small:h-[19rem] medium:h-[17rem] sm:h-[16rem] " : ""
           }`}
         >
-        <label className={`${selectedOption === "option3" ? "text-white" : ""}`}>
-            How do I find the lowest rental car prices?
+        <label className={`${selectedOption === "option3" ? "text-white   bg-blue-500 shadow-lg shadow-blue-200" : ""}`}>
+            3. How do I find the lowest rental car prices?
         </label>
           {selectedOption === "option3" && (
-            <div className="dropdown">
-              <p>This is the information about finding the lowest rental car prices.</p>
+            <div className="dropdown ">
+            <p className="flex items-center justify-center ml-5 mt-3 xs:mt-5 small:mt-5 sm:mt-7 lg:mt-8 z-50 text-base text-gray-500 font-normal w-[90%] pb-5">
+                Book in advance: Booking your rental car ahead of time can often result in lower prices.
+                Compare prices from multiple companies: Use websites like Kayak, Expedia, or Travelocity
+                to compare prices from multiple rental car companies. Look for discount codes and 
+                coupons: Search for discount codes and coupons that you can use to lower the rental 
+                price. Renting from an off-airport location can sometimes result in lower prices.
+            </p>
             </div>
           )}
         </div>

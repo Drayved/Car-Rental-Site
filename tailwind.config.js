@@ -12,7 +12,9 @@ export default {
       screens: {
         xxs: "360px", 
         xs:"400px",
-        small:"450px"
+        xsmall:"450px",
+        small:"520px",
+        medium:"580px"
       },
     },
   },
