@@ -1,17 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, } from "react";
 
 const Faq = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [contentHeight, setContentHeight] = useState(0);
-  const contentRef = useRef(null);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (contentRef.current) {
-      setContentHeight(selectedOption === "option1" ? contentRef.current.clientHeight : 0);
-    }
-  }, [selectedOption]);
 
-  const handleSelect = (option) => {
+
+
+  const handleSelect = (option: string) => {
     if (selectedOption === option) {
       setSelectedOption(null);
     } else {
