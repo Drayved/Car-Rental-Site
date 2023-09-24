@@ -14,24 +14,47 @@ const LandingTestimonials = () => {
                 </p>
             </div>
             <div className="flex flex-col lg:flex-row lg:gap-10 xl:gap-20 items-center mx-auto justify-center ">
-                <div className="mt-20 w-[90%] sm:w-[30rem] h-auto shadow-md  p-6">
+                <div className="mt-20 w-[90%] sm:w-[30rem] h-auto shadow-md  px-6 pt-6">
                     <h1 className="text-xl text-gray-500">
                         "We rented a car from this website and had an amazing experience! The booking was easy and 
                         the rental rates were very affordable. "
                     </h1>
-                    <div className="flex mt-7 justify-between">
-                        <h1>Sky Lukewalker</h1>
-                        <h2>5 Stars</h2>
+                    <div className="flex flex-col xsmall:flex-row mt-7 justify-between">
+                        <div className="flex">
+                        <img className="w-16 h-16 rounded-full mt-0.5" src="/images/luke.jpg" alt="" />
+                        <div className="ml-3 mt-1.5">
+                            <h1 className="font-bold text-lg">Sky Lukewalker</h1>
+                            <p>Kentucky</p>
+                        </div>
+                        
+                        </div>
+                        <div>
+                            
+                            <img className="w-40 h-40 -mt-12 xsmall:-mt-[3.8rem]" src="/images/star.png" alt="" />
+                        </div>
+
                     </div>
                 </div>
-                <div className="mt-20 w-[90%] sm:w-[30rem] h-auto shadow-md  p-6">
+                <div className="mt-20 w-[90%] sm:w-[30rem] h-auto shadow-md  px-6 pt-6">
                     <h1 className="text-xl text-gray-500">
                         "The car was in great condition and made our trip even better. Very affordable for any budget. Highly recommend this car rental website!"
                     </h1>
-                    <div className="flex mt-5 justify-between">
-                        <h1>San Holo</h1>
-                        <h2>5 Stars</h2>
+                    <div className="flex flex-col xsmall:flex-row mt-7 justify-between">
+                        <div className="flex">
+                        <img className="w-16 h-16 mt-0.5 rounded-full" src="/images/han.jpg" alt="" />
+                        <div className="ml-3 mt-1.5">
+                            <h1 className="font-bold text-lg">San Holo</h1>
+                            <p>Ohio</p>
+                        </div>
+                        
+                        </div>
+                        <div>
+                            
+                            <img className="w-40 h-40 -mt-12 xsmall:-mt-[3.8rem]" src="/images/star.png" alt="" />
+                        </div>
+
                     </div>
+                
                 </div>
             </div>
         </div>
