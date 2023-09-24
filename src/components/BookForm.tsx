@@ -5,7 +5,7 @@ const BookForm = () => {
     return (
       <>
         <div className=" bg-form  px-2 w-[90%] py-8 mx-auto">
-          <h1 className="text-2xl font-bold mb-5">Book a Car</h1>
+          <h1 className="text-2xl font-bold ml-4 mb-5">Book a Car</h1>
           <form className="flex flex-wrap text-gray-500" action="">
             <div className="select-container">
               <label className="book-dropdown-text" htmlFor="">

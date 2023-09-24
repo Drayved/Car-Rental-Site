@@ -114,24 +114,24 @@ const ChooseCar = () => {
                 </p>
             </div>
 
-            <div className="mt-20 flex justify-center xl:max-w-[120rem] mx-auto  flex-wrap">
+            <div className="mt-20 flex justify-center xl:max-w-[120rem] mx-auto flex-wrap">
               <div className="w-[90%] flex flex-col text-left xl:flex-row ">  
                 <ul className="">
-                {vehicles.map((vehicle, index) => (
-                    <li className="my-1" key={index}>
-                    <button className="vehicle-btns w-[100%] pl-7 xl:w-72 text-xl text-left bg-gray-100 shadow-sm shadow-gray-300 h-[4rem] font-bold mb-1" onClick={() => handleVehicleSelect(vehicle)}>
-                        {vehicle.name}
-                    </button>
-                    </li>
-                ))}
+                  {vehicles.map((vehicle, index) => (
+                      <li className="my-1" key={index}>
+                      <button className="vehicle-btns w-[100%] pl-7 xl:w-72 text-xl text-left bg-gray-100 shadow-sm shadow-gray-300 h-[4rem] font-bold mb-1" onClick={() => handleVehicleSelect(vehicle)}>
+                          {vehicle.name}
+                      </button>
+                      </li>
+                  ))}
                 </ul>
                 <div>
                   
                 </div>
-                <div className="w-full flex flex-col md:flex-row ">
+                <div className="w-full flex flex-col md:flex-row">
 
-                <div className="w-full  h-full mb-6  flex md:items-start xl:mr:0 xl:mb-0">
-                  <img className="xl:flex car-imgs mx-auto my-auto  w-[100%] max-w-[40rem] " src={selectedVehicle.imageSrc} alt={selectedVehicle.name} />  
+                <div className="w-full sm:mt-0 h-full mb-6  flex md:items-start xl:mr:0 xl:mb-0">
+                  <img className="xl:flex car-imgs mx-auto my-auto mt-12 md:mt-32 w-[100%] max-w-[40rem] " src={selectedVehicle.imageSrc} alt={selectedVehicle.name} />  
                 </div>
                 
                                 
@@ -140,13 +140,13 @@ const ChooseCar = () => {
                     
                       <div className=" xl:relative w-full xl:right-36 mt-1">      
 
-                        <table className="relative xl:ml-[65%] w-full mt-5 xl:mt-[-4px]">
+                        <table className="relative xl:ml-[65%] w-full mt-16 xl:mt-[-4px]">
                           <div className="text-left w-full">
                             <div className="flex w-[100%]  ">
-                              <p className="bg-blue-600 pl-10 text-white py-2  pr-2 text-3xl font-bold ">
+                              <p className="bg-blue-500 pl-10 text-white py-2  pr-2 text-3xl font-bold ">
                                 {selectedVehicle.details.Cost}
                               </p>
-                              <p className="bg-blue-600 text-white pt-1.5   w-full text-2xl  font-normal"><span className="text-3xl font-light relative top-0.5">/ </span>rent per day</p>
+                              <p className="bg-blue-500 text-white pt-1.5   w-full text-2xl  font-normal"><span className="text-3xl font-light relative top-0.5">/ </span>rent per day</p>
                             </div>
                             
                             <tbody className="">
@@ -160,7 +160,7 @@ const ChooseCar = () => {
                               ))} 
                             </tbody>
 
-                            <button className="bg-blue-600 mt-3 w-full text-white h-12 text-2xl shadow-md shadow-black font-bold rounded-sm ">
+                            <button className="bg-blue-500 mt-3 w-full text-white h-12 text-2xl shadow-md shadow-black font-bold rounded-sm ">
                                 Reserve Now
                             </button>
                           </div>  

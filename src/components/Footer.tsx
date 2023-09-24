@@ -26,7 +26,7 @@ const Footer = () => {
                 <p className="mb-2">Subscribe to keep up to date with special offerings</p>
                 <form className="flex flex-col items-center" action="">
                     <input placeholder="Enter Email Address" className="mt-3 py-3 px-5 md:w-[15rem] lg:w-[18rem] w-[90%] bg-gray-200" type="text" />
-                    <button className="md:w-[15rem] lg:w-[18rem] w-[90%] bg-blue-600 text-white text-lg py-2 mt-2" type="submit">Submit</button>
+                    <button className="md:w-[15rem] lg:w-[18rem] w-[90%] bg-blue-500 text-white text-lg py-2 mt-2" type="submit">Submit</button>
                 </form>
                 
             </div>

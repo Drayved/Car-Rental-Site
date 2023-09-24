@@ -41,9 +41,9 @@ const Navbar = () => {
     }
 
   return (
-    <div className="z-20 absolute right-0 left-0 mx-auto text-center top-0 flex ">
+    <div className="z-20 absolute right-0 left-0 mx-auto  top-0 flex ">
       <div className="absolute mt-5 ml-5 2xl:ml-[20%] md:ml-[5%] flex">
-        <img className="w-20 mr-2 " src="/images/blue-car.png" alt="" />
+        <img className="w-[4.3rem] mt-1 mr-2 " src="/images/blue-car.png" alt="" />
         <div>
           <h1 className="text-2xl font-bold mt-3">CAR</h1>
           <h2 className="font-semibold text-lg mt-[-7px]">Rental</h2>
@@ -101,7 +101,7 @@ const Navbar = () => {
                 </div>
                 
                 <button className="mr-10 font-bold">Sign In</button>
-                <button className="bg-blue-600 text-white h-10 w-28 font-bold rounded-sm shadow-blue-600 shadow-md">Register</button>
+                <button className="bg-blue-500 text-white h-10 w-28 font-bold rounded-sm shadow-blue-500 shadow-md">Register</button>
               </div>
             </div>
             
@@ -110,7 +110,7 @@ const Navbar = () => {
       ) : (
         <div className="absolute right-10 top-10 md:right-[5%] lg:right-[5%] 2xl:right-[20%]">
           <button onClick={toggleSignIn} className="mr-6 font-bold">Sign In</button>
-          <button onClick={toggleRegister} className="bg-blue-600 text-white h-10 w-28 font-bold rounded-sm shadow-blue-600 shadow-md">Register</button>
+          <button onClick={toggleRegister} className="bg-blue-500 text-white h-10 w-28 font-bold rounded-sm shadow-blue-500 shadow-md">Register</button>
           {showSignIn && (
             <div className="absolute right-0 md:right-24 top-24 shadow-md bg-white rounded-sm p-5 h-80 w-[100%] md:w-96">
               <div className="border py-5 px-10 md:py-10 mx-auto w-[90%] ">
@@ -122,7 +122,7 @@ const Navbar = () => {
                   <label htmlFor="" className="text-left mb-[-10px]">Password:</label>
                   <input className="p-2 shadow-sm shadow-black" type="password" placeholder="Password" />
                 </div>
-                <button className="bg-blue-600 text-white h-10 w-28 font-bold rounded-sm shadow-blue-600 shadow-md">{registerClicked ? "Sign Up" : "Sign In"}</button>
+                <button className="bg-blue-500 text-white h-10 w-28 font-bold rounded-sm shadow-blue-500 shadow-md">{registerClicked ? "Sign Up" : "Sign In"}</button>
               </div>
             </div>
             

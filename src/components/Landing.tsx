@@ -16,7 +16,7 @@ const Landing = () => {
                 <div className="flex just">
                     <div className="flex flex-col md:min-w-[25rem] relative z-10  md:mt-28">
                         <h3 className="text-2xl font-bold mb-3 z-20 relative">Plan your trip now</h3>
-                        <h1 className="text-6xl font-bold z-20 relative w-[95%] mx-auto md:mx-0">Save <span className="text-blue-600">big</span> with our car rental</h1>
+                        <h1 className="text-6xl font-bold z-20 relative w-[95%] mx-auto md:mx-0">Save <span className="text-blue-500">big</span> with our car rental</h1>
                         <div className="mt-8 text-gray-500 px-10 md:px-0 z-10 relative">
                             <p className=" text-gray-500 leading-6 mb-4">
                                 Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.
@@ -111,13 +111,13 @@ const Landing = () => {
             <div className="mt-36 bg-[#2d2d2d] text-white w-screen h-80 lg:h-52 text-center flex flex-col justify-center">
                 <h1 className="md:text-5xl text-4xl w-[95%]">Save Big With Our Cheap Car Rental!</h1>
                 <p className="md:text-2xl text-xl mt-5 w-[95%]">Top Airports. Local Supplies. 
-                    <span className="text-blue-600"> 24/7</span> Support
+                    <span className="text-blue-500"> 24/7</span> Support
                 </p>
             </div>
 
             {/* Choose us section */}
 
-            <div className="mt-32">
+            <div className="mt-24">
                 <ChooseUs />
             </div>
 

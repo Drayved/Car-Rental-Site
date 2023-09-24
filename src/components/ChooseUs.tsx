@@ -18,7 +18,7 @@ const ChooseUs = () => {
                         the bank. Our deals are designed to give you the ultimate renting 
                         experience, so don't miss out on your chance to save big.
                     </p>
-                    <button className="py-4 mx-auto lg:mx-0 mb-16 shadow-xl shadow-blue-300 bg-blue-600 text-white text-center w-40 mt-8">Find details</button>
+                    <button className="py-4 mx-auto lg:mx-0 mb-16 shadow-md shadow-blue-200 bg-blue-500 text-white text-center w-40 mt-8">Find details</button>
                 </div>
                 
                 <div className="w-[85%] mx-auto lg:mr-5">
