@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <div className="z-20 absolute right-0 left-0 mx-auto  top-0 flex ">
       <div className="absolute mt-5 ml-5 2xl:ml-[20%] md:ml-[5%] flex">
-        <img className="w-[4.3rem] mt-1 mr-2 " src="/images/blue-car.png" alt="" />
+        <img className="w-[4rem] mt-1.5 mr-2 " src="/images/blue-car.png" alt="" />
         <div>
           <h1 className="text-2xl font-bold mt-3">CAR</h1>
           <h2 className="font-semibold text-lg mt-[-7px]">Rental</h2>
