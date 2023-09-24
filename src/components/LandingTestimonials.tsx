@@ -30,7 +30,7 @@ const LandingTestimonials = () => {
                         </div>
                         <div>
                             
-                            <img className="w-40 h-40 -mt-12 xsmall:-mt-[3.8rem]" src="/images/star.png" alt="" />
+                            <img className="w-40 h-40 -mt-12 mx-auto xsmall:mx-0 xsmall:-mt-[3.8rem]" src="/images/star.png" alt="" />
                         </div>
 
                     </div>
@@ -50,7 +50,7 @@ const LandingTestimonials = () => {
                         </div>
                         <div>
                             
-                            <img className="w-40 h-40 -mt-12 xsmall:-mt-[3.8rem]" src="/images/star.png" alt="" />
+                            <img className="w-40 h-40 -mt-12 mx-auto xsmall:mx-0 xsmall:-mt-[3.8rem]" src="/images/star.png" alt="" />
                         </div>
 
                     </div>
