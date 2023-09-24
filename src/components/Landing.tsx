@@ -51,7 +51,7 @@ const Landing = () => {
 
             {/* Book form section */}
 
-            <div className="flex flex-col justify-center  mt-72 sm:mt-[30rem]">
+            <div className="flex flex-col justify-center  mt-32 sm:mt-[30rem]">
                 <BookForm />
             </div>
 
