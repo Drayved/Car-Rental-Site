@@ -12,7 +12,7 @@ const ChooseUs = () => {
                 <div className="flex flex-col ">
                     <h4 className="font-semibold mb-2 text-xl lg:text-left">Why Choose Us</h4>
                     <h1 className="font-bold text-4xl mb-5 lg:w-[95%] lg:text-left">Best valued deals you will ever find</h1>
-                    <p className="lg:w-[30rem] w-[60%] text-lg text-gray-500 mx-auto lg:text-left">Discover the best deals you'll ever find with our unbeatable offers. 
+                    <p className="lg:w-[30rem] w-[90%] text-lg text-gray-500 mx-auto text-left">Discover the best deals you'll ever find with our unbeatable offers. 
                         We're dedicated to providing you with the best value for your money, 
                         so you can enjoy top-quality services and products without breaking 
                         the bank. Our deals are designed to give you the ultimate renting 

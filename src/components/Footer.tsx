@@ -3,10 +3,9 @@
 const Footer = () => {
 
     return(
-        <div className="footer-container mt-52 flex flex-wrap justify-between pt-12 px-2 shadow-sm shadow-black mx-auto text-center">
+        <div className="footer-container mt-52 flex flex-wrap justify-between pb-10 pt-12 px-2 shadow-sm shadow-black mx-auto text-center">
             <div className="w-full md:w-[25%] mr-[-50px] lg:w-[25%] mb-12">
-                <h1 className="mb-5 text-2xl"><span className="font-bold">CAR </span>Rental</h1>
-                <p className="md:w-[60%] lg:w-[60%] w-[90%] mb-5 leading-6 mx-auto text-gray-500">We offer a large range of vehicles so you can find the right match for you.</p>
+                <h1 className="mb-3 text-2xl"><span className="font-bold">CAR </span>Rental</h1>
                 <p className="font-bold mb-2">(123)-456-7899</p>
                 <p className="font-bold">car-rental@car-rentals.com</p>
             </div>

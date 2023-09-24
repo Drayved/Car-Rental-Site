@@ -4,7 +4,7 @@ const BookForm = () => {
 
     return (
       <>
-        <div className=" bg-form shadow-md px-10 w-[85%] py-8 mx-auto mt-96">
+        <div className=" bg-form  px-2 w-[90%] py-8 mx-auto mt-96">
           <h1 className="text-2xl font-bold mb-5">Book a Car</h1>
           <form className="flex flex-wrap text-gray-500" action="">
             <div className="select-container">

@@ -2,6 +2,7 @@ import BookForm from "./BookForm"
 import ChooseCar from "./ChooseCar"
 import ChooseUs from "./ChooseUs"
 import Faq from "./Faq"
+import LandingTestimonials from "./LandingTestimonials"
 
 const Landing = () => {
 
@@ -17,7 +18,9 @@ const Landing = () => {
                         <h3 className="text-2xl font-bold mb-3 z-20 relative">Plan your trip now</h3>
                         <h1 className="text-6xl font-bold z-20 relative w-[95%] mx-auto md:mx-0">Save <span className="text-blue-600">big</span> with our car rental</h1>
                         <div className="mt-8 text-gray-500 px-10 md:px-0 z-10 relative">
-                            <p className=" text-gray-500 leading-6 mb-4">Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.</p>
+                            <p className=" text-gray-500 leading-6 mb-4">
+                                Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.
+                            </p>
                             
                         </div>
                     </div>
@@ -48,14 +51,14 @@ const Landing = () => {
 
             {/* Book form section */}
 
-            <div className="flex flex-col justify-center mt-40">
+            <div className="flex flex-col justify-center mt-36">
                 <BookForm />
             </div>
 
             {/* Plan your trip section */}
             
             <div>
-                <div className="text-center mt-44">
+                <div className="text-center mt-40">
                     <h3 className="text-2xl mb-4">Plan your trip now</h3>
                     <h1 className="text-4xl">Quick & easy car rental</h1>
                 </div>
@@ -105,21 +108,27 @@ const Landing = () => {
 
             {/* Save banner section */}
 
-            <div className="mt-48 bg-[#2d2d2d] text-white w-screen h-80 lg:h-52 text-center flex flex-col justify-center">
-                <h1 className="text-5xl">Save Big With Our Cheap Car Rental!</h1>
-                <p className="text-2xl mt-5">Top Airports. Local Supplies. 
+            <div className="mt-36 bg-[#2d2d2d] text-white w-screen h-80 lg:h-52 text-center flex flex-col justify-center">
+                <h1 className="md:text-5xl text-4xl w-[95%]">Save Big With Our Cheap Car Rental!</h1>
+                <p className="md:text-2xl text-xl mt-5 w-[95%]">Top Airports. Local Supplies. 
                     <span className="text-blue-600"> 24/7</span> Support
                 </p>
             </div>
 
             {/* Choose us section */}
 
-            <div className="mt-40">
+            <div className="mt-32">
                 <ChooseUs />
             </div>
 
+            {/* Testimonials */}
+
+            <div className="mt-32">
+                <LandingTestimonials />
+            </div>
+
             {/* FAQ section */}
-            <div className="mt-40">
+            <div className="mt-32">
                 <Faq />
             </div>
         </>
