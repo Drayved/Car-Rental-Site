@@ -98,6 +98,13 @@
     @apply bg-blue-600 text-white transition-colors duration-500
   }
 
+  /* Testimonials */
+
+  .review-container{
+    @apply mt-20 w-[90%] sm:w-[30rem] h-auto shadow-md  px-6 pt-6;
+    box-shadow: 0px 0px 7px 1px rgb(233, 230, 230)
+  }
+
   /* FAQ */
 
   .faq-item {

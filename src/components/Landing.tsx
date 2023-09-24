@@ -11,7 +11,7 @@ const Landing = () => {
 
         {/* Hero section */}
 
-            <div className="top-section-container w-[95%] mt-[20vh] md:mt-[28vh] mx-auto md:text-left md:ml-[10%] 2xl:ml-[20%]">
+            <div className="top-section-container w-[95%] mt-[17vh] md:mt-[28vh] mx-auto md:text-left md:ml-[10%] 2xl:ml-[20%]">
                 <img className="absolute right-0 top-0 z-10 pointer-events-none hidden md:flex h-[65%]  min-w-[30rem] opacity-50" src="/images/hero-bg.png" alt="" />
                 <div className="flex just">
                     <div className="flex flex-col md:min-w-[25rem] relative z-10  md:mt-28">
@@ -25,7 +25,7 @@ const Landing = () => {
                         </div>
                     </div>
                     <div className="relative hidden md:flex z-10 w-screen bg-blue-500 h-0 mr-20">
-                        <img className="absolute z-10 mx-auto w-[100%] md:mt-40 lg:mt-20 max-w-[45rem] xl:max-w-[45rem] 2xl:max-w-[53rem] " src="/images/main-car.png" alt="" />
+                        <img className="absolute z-10 mx-auto w-[100%] mt-40 md:mt-52 lg:mt-40 xl:mt-16  max-w-[45rem] xl:max-w-[53rem] " src="/images/main-car.png" alt="" />
                     </div>
                     
                 </div>   
@@ -51,7 +51,7 @@ const Landing = () => {
 
             {/* Book form section */}
 
-            <div className="flex flex-col justify-center mt-36">
+            <div className="flex flex-col justify-center  mt-72 sm:mt-[30rem]">
                 <BookForm />
             </div>
 
