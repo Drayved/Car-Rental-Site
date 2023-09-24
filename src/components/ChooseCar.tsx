@@ -140,7 +140,7 @@ const ChooseCar = () => {
                     
                       <div className=" xl:relative w-full xl:right-36 mt-1">      
 
-                        <table className="relative xl:ml-[65%] w-full mt-16 xl:mt-[-4px]">
+                        <table className="relative xl:ml-[65%] w-full mt-12 xl:mt-[-4px]">
                           <div className="text-left w-full">
                             <div className="flex w-[100%]  ">
                               <p className="bg-blue-500 pl-10 text-white py-2  pr-2 text-3xl font-bold ">
