@@ -11,14 +11,14 @@ const Landing = () => {
 
         {/* Hero section */}
 
-            <div className="top-section-container w-[95%] mt-[17vh] md:mt-[28vh] mx-auto md:text-left md:ml-[10%] 2xl:ml-[20%]">
+            <div className="top-section-container  mt-[17vh] md:mt-[28vh] mx-auto md:text-left md:ml-[10%] 2xl:ml-[20%]">
                 <img className="absolute right-0 top-0 z-10 pointer-events-none hidden md:flex h-[65%]  min-w-[30rem] opacity-50" src="/images/hero-bg.png" alt="" />
                 <div className="flex just">
                     <div className="flex flex-col md:min-w-[25rem] relative z-10  md:mt-28">
                         <h3 className="text-2xl font-bold mb-3 z-20 relative">Plan your trip now</h3>
-                        <h1 className="text-6xl font-bold z-20 relative w-[95%] mx-auto md:mx-0">Save <span className="text-blue-500">big</span> with our car rental</h1>
+                        <h1 className="text-6xl font-bold z-20 relative w-[18rem] xs:w-[100%] mx-auto md:mx-0">Save <span className="text-blue-500">big</span> with our car rental</h1>
                         <div className="mt-8 text-gray-500 px-10 md:px-0 z-10 relative">
-                            <p className=" text-gray-500 leading-6 mb-4">
+                            <p className=" text-gray-500 mx-auto leading-6 mb-4">
                                 Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.
                             </p>
                             
