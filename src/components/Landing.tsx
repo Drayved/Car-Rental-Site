@@ -3,6 +3,7 @@ import ChooseCar from "./ChooseCar"
 import ChooseUs from "./ChooseUs"
 import Faq from "./Faq"
 import LandingTestimonials from "./LandingTestimonials"
+import MobileApp from "./MobileApp"
 
 const Landing = () => {
 
@@ -128,8 +129,15 @@ const Landing = () => {
             </div>
 
             {/* FAQ section */}
+
             <div className="mt-32">
                 <Faq />
+            </div>
+
+            {/* App section */}
+
+            <div >
+                <MobileApp />
             </div>
         </>
     )

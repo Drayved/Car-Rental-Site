@@ -3,7 +3,7 @@
 const Footer = () => {
 
     return(
-        <div className="footer-container mt-52 flex flex-wrap justify-between pb-10 pt-12 px-2 shadow-sm shadow-black mx-auto text-center">
+        <div className=" relative z-20 footer-container mt-48 pb-10 flex flex-wrap justify-between  pt-12 px-2 shadow-sm bg-white shadow-black mx-auto text-center">
             <div className="w-full md:w-[25%] mr-[-50px] lg:w-[25%] mb-12">
                 <h1 className="mb-3 text-2xl"><span className="font-bold">CAR </span>Rental</h1>
                 <p className="font-bold mb-2">(123)-456-7899</p>
