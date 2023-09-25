@@ -29,7 +29,7 @@ const ChooseUs = () => {
                         </div>
                         <div className="lg:flex lg:flex-col">
                             <h1 className="font-bold text-2xl mb-3">Cross Country Drive</h1>
-                            <p className="text-center lg:text-left lg:w-80">Take your driving experience to the next level with our top notch
+                            <p className="text-left w-[85%] mx-auto lg:text-left lg:w-80">Take your driving experience to the next level with our top notch
                                 vehicles for your cross-country adventures.
                             </p>
                         </div> 
@@ -41,7 +41,7 @@ const ChooseUs = () => {
                         </div>
                         <div className="lg:flex-col">
                             <h1 className="font-bold text-2xl mb-3">All Inclusive Pricing</h1>
-                            <p className="text-center lg:text-left lg:w-80">Get everything you need in one convenient, 
+                            <p className="text-left w-[85%] mx-auto lg:text-left lg:w-80">Get everything you need in one convenient, 
                                 transparent price with our all-inclusive pricing policy.
                             </p>
                         </div>
@@ -53,7 +53,7 @@ const ChooseUs = () => {
                         </div>
                         <div className="lg:flex lg:flex-col">
                             <h1 className="font-bold text-2xl mb-3">No Hidden Charges</h1>
-                            <p className="text-center lg:text-left lg:w-80">Enjoy peace of mind with our no hidden charges policy. 
+                            <p className="text-left w-[85%] mx-auto lg:text-left lg:w-80">Enjoy peace of mind with our no hidden charges policy. 
                                 We believe in transparent and honest pricing.
                             </p>
                         </div>

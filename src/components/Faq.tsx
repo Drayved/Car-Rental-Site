@@ -16,7 +16,10 @@ const Faq = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center text-center small:text-center w-[90%] mx-auto">
+      
+      <div className="relative z-50 flex flex-col items-center  small:text-center w-[90%] mx-auto">
+      
+               
         <h3 className="text-2xl font-bold mb-3">FAQ</h3>
         <h1 className="text-5xl font-bold mb-5 leading-[3.5rem]">
           Frequently Asked Questions
@@ -26,7 +29,10 @@ const Faq = () => {
           Website: Answers to Common Concerns and Inquiries.
         </p>
       </div>
-      <div className="w-[90%] faq-shadow mx-auto mt-12  max-w-[50rem]">
+      <div className="absolute min-w-[45rem] z-10">
+          <img className="relative -left-32 z-10" src="/images/white-car.jpg" alt="" />
+      </div>
+      <div className="w-[90%] relative z-50 faq-shadow mx-auto mt-12 bg-white max-w-[50rem]">
         <div
           onClick={() => handleSelect("option1")}
           className={`faq-item  ${

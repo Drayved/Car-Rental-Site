@@ -51,11 +51,17 @@ const Navbar = () => {
       </div>
       {window.innerWidth < 1024 ? (
         <div>
-          {showMenu ? (
+           <div className="absolute top-10 right-8 mr-10 z-50">
+                  <div className={`menu-btn ${showMenu ? "active" : ""}`} onClick={toggleMenu}>
+                    {/* <div className={`menu-line ${showMenu ? "menu-line-1" : ""}`}></div>
+                    <div className={`menu-line ${showMenu ? "menu-line-2" : ""}`}></div>
+                    <div className={`menu-line ${showMenu ? "menu-line-3" : ""}`}></div> */}
+                    <div className="menu-btn-burger"></div>
+                  </div>
+            </div>
+
             <div className="">
-              
-              <button className="fixed right-5 top-5 text-2xl z-50" onClick={toggleMenu}>X</button>
-              <ul className="small-nav-container ">
+              <ul className={`small-nav-container ${showMenu ? "active" : ""}`}>
                 <li>Home</li>
                 <li>About</li>
                 <li>Vehicle Models</li>
@@ -64,16 +70,9 @@ const Navbar = () => {
                 <li>Contact</li>
               </ul>
             </div>
-          ) : (
-            <div className="absolute top-10 right-8 mr-10 ">
-                <button className="menu-button" onClick={toggleMenu}>
-                  <div className="menu-line"></div>
-                  <div className="menu-line"></div>
-                  <div className="menu-line"></div>
-                </button>
-            </div>
-            
-          )}
+
+           
+           
         </div>
       ) : (
         <ul className="nav-container ">

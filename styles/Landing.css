@@ -123,6 +123,21 @@
     @apply block font-bold pl-8 py-5 text-lg;
   }
 
+  /* Scroll button */
+
+  .scroll-to-top {
+    @apply fixed bottom-5 right-5 w-10 h-10 bg-blue-500 rounded-full flex justify-center items-center opacity-0 cursor-pointer z-50;
+
+
+    
+    transition: opacity 0.3s ease-in-out;
+    
+  }
+  
+  .scroll-to-top.visible {
+    opacity: 1;
+  }
+
  
   @media(min-width:350px){
     .faq-item .open{
@@ -154,3 +169,12 @@
     }
 }
 
+@media(max-width: 870px){
+  .blue-car{
+    @apply -right-[5%]
+  }
+
+  .blue-car-container{
+    
+  }
+}

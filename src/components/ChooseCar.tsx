@@ -105,11 +105,11 @@ const ChooseCar = () => {
     };
 
     return(
-        <div className="w-screen mt-28">
+        <div className="w-screen ">
             <div className="text-center">
                 <h1 className="text-3xl mb-4 text-gray-700 font-semibold">Vehicle Models</h1>
                 <h1 className="font-bold text-5xl mb-4">Our rental fleet</h1>
-                <p className="max-w-2 text-lg text-gray-500 w-[90%] md:w-[35rem] mx-auto ">Choose from a variety of our amazing vehicles 
+                <p className="max-w-2 text-lg text-gray-500 w-[90%] md:w-[35rem] mx-auto text-left md:text-center">Choose from a variety of our amazing vehicles 
                     to rent for your next adventure or business trip
                 </p>
             </div>
