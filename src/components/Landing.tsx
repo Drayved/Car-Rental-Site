@@ -1,4 +1,4 @@
-import About from "./About"
+import PlanTrip from "./PlanTrip"
 import BookForm from "./BookForm"
 import ChooseCar from "./ChooseCar"
 import ChooseUs from "./ChooseUs"
@@ -27,7 +27,7 @@ const Landing = () => {
                 {/* Plan your trip section */}
 
                 <div className="mt-32 xl:mt-52">
-                    <About />
+                    <PlanTrip />
                 </div>
                 
                 {/* Choose car section */}

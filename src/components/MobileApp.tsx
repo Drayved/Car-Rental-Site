@@ -13,7 +13,7 @@ const MobileApp = () => {
                         flight discounts, and more! We also offer special rates
                         if you book your car through our app! 
                     </p>
-                    <div className=" mt-10 gap-7 flex flex-col sm:justify-start sm:items-start sm:flex-row ">
+                    <div className=" mt-10 gap-2 small:gap-7 flex flex-col sm:justify-start items-start xsmall:flex-row ">
                         <img className="w-52" src="/images/google-store.svg" alt="" />
                         <img className="w-52" src="/images/apple-store.svg" alt="" />
                     </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(window.innerWidth >= 1024);
@@ -63,7 +64,9 @@ const Navbar = () => {
             <div className="">
               <ul className={`small-nav-container ${showMenu ? "active" : ""}`}>
                 <li>Home</li>
-                <li>About</li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
                 <li>Vehicle Models</li>
                 <li>Testimonials</li>
                 <li>Our Team</li>
@@ -77,7 +80,9 @@ const Navbar = () => {
       ) : (
         <ul className="nav-container ">
           <li>Home</li>
-          <li>About</li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
           <li>Vehicle Models</li>
           <li>Testimonials</li>
           <li>Our Team</li>

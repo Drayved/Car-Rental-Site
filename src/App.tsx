@@ -5,6 +5,7 @@ import Layout from "./components/Layout"
 import Landing from "./components/Landing";
 import "../styles/Nav.css"
 import "../styles/Landing.css"
+import About from "./components/About";
 
 const defaultAuthValue = null
 
@@ -23,6 +24,7 @@ function App() {
     createRoutesFromElements(
       <Route path={"/"} element={<Layout />}>
         <Route index element={<Landing />} />
+        <Route path={"/about"} element={<About />}/> 
         
       </Route>
     )
