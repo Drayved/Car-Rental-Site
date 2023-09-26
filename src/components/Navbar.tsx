@@ -43,13 +43,15 @@ const Navbar = () => {
 
   return (
     <div className="z-20 absolute right-0 left-0 mx-auto  top-0 flex ">
-      <div className="absolute mt-5 ml-5 2xl:ml-[20%] md:ml-[5%] flex">
-        <img className="w-[4rem] mt-1.5 mr-2 " src="/images/blue-car.png" alt="" />
-        <div>
-          <h1 className="text-2xl font-bold mt-3">CAR</h1>
-          <h2 className="font-semibold text-lg mt-[-7px]">Rental</h2>
+      <Link to="/">
+        <div className="absolute mt-5 ml-5 2xl:ml-[20%] md:ml-[5%] flex">
+          <img className="w-[4rem] mt-1.5 mr-2 " src="/images/blue-car.png" alt="" />
+          <div>
+            <h1 className="text-2xl font-bold mt-3">CAR</h1>
+            <h2 className="font-semibold text-lg mt-[-7px]">Rental</h2>
+          </div>
         </div>
-      </div>
+      </Link>
       {window.innerWidth < 1024 ? (
         <div>
            <div className="absolute top-10 right-8 mr-10 z-50">
@@ -62,15 +64,25 @@ const Navbar = () => {
             </div>
 
             <div className="">
-              <ul className={`small-nav-container ${showMenu ? "active" : ""}`}>
-                <li>Home</li>
+              <ul onClick={toggleMenu} className={`small-nav-container ${showMenu ? "active" : ""}`}>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
                 <li>
                   <Link to="/about">About</Link>
                 </li>
-                <li>Vehicle Models</li>
-                <li>Testimonials</li>
-                <li>Our Team</li>
-                <li>Contact</li>
+                <li>
+                  <Link to="/models">Vehicle Models</Link>
+                </li>
+                <li>
+                  <Link to="/testimonials">Testimonials</Link>
+                </li>
+                <li>
+                  <Link to='/our-team'>Our Team</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contact</Link>
+                </li>
               </ul>
             </div>
 
@@ -78,15 +90,25 @@ const Navbar = () => {
            
         </div>
       ) : (
-        <ul className="nav-container ">
-          <li>Home</li>
+        <ul onClick={toggleMenu} className="nav-container ">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li>
             <Link to="/about">About</Link>
           </li>
-          <li>Vehicle Models</li>
-          <li>Testimonials</li>
-          <li>Our Team</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/models">Vehicle Models</Link>
+          </li>
+          <li>
+            <Link to="/testimonials">Testimonials</Link>
+          </li>
+          <li>
+            <Link to='/our-team'>Our Team</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
         </ul>
       )}
       {window.innerWidth < 1024 ? (

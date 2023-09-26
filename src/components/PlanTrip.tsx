@@ -1,6 +1,6 @@
 
 
-const About = () => {
+const PlanTrip = () => {
 
     return(
         <div>
@@ -48,4 +48,4 @@ const About = () => {
     )
 }
 
-export default About
+export default PlanTrip

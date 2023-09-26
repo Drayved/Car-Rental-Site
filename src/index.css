@@ -4,12 +4,13 @@
 
 body,
 html{
-    @apply overflow-x-hidden  m-0 p-0;
+    @apply overflow-x-hidden m-0 p-0 ;
     font-family: 'Roboto', sans-serif;
     background-color: #fff;
     z-index: -2;
     transition: width 5.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
 }
+
 
 .container{
     transition: width 0.3s ease, height 0.3s ease;
