@@ -126,7 +126,7 @@
   /* Scroll button */
 
   .scroll-to-top {
-    @apply w-10 h-10 bg-blue-500 rounded-full flex justify-center items-center opacity-0 cursor-pointer z-50;
+    @apply fixed bottom-5 right-5 w-10 h-10 bg-blue-500 rounded-full flex justify-center items-center opacity-0 cursor-pointer z-50;
 
 
     
