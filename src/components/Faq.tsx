@@ -29,9 +29,7 @@ const Faq = () => {
           Website: Answers to Common Concerns and Inquiries.
         </p>
       </div>
-      <div className="relative top-[22rem] min-w-[45rem] z-10">
-          <img className="relative -left-32 z-10" src="/images/white-car.jpg" alt="" />
-      </div>
+
       <div className="w-[90%] relative z-50 faq-shadow mx-auto mt-12 bg-white max-w-[50rem]">
         <div
           onClick={() => handleSelect("option1")}
@@ -99,6 +97,9 @@ const Faq = () => {
             </div>
           )}
         </div>
+      </div>
+      <div className="relative h-0 -top-72 min-w-[45rem] z-0">
+          <img className="relative -left-32 z-10" src="/images/white-car.jpg" alt="" />
       </div>
     </div>
   );
