@@ -65,8 +65,10 @@ const Landing = () => {
                 <div className="mt-32 xl:mt-44">
                     <MobileApp />
                 </div>
-
-                <ScrollToTopButton />
+                <div>
+                    <ScrollToTopButton />
+                </div>
+                
             </>
     )
    

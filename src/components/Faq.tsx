@@ -29,7 +29,7 @@ const Faq = () => {
           Website: Answers to Common Concerns and Inquiries.
         </p>
       </div>
-      <div className="absolute min-w-[45rem] z-10">
+      <div className="relative top-[22rem] min-w-[45rem] z-10">
           <img className="relative -left-32 z-10" src="/images/white-car.jpg" alt="" />
       </div>
       <div className="w-[90%] relative z-50 faq-shadow mx-auto mt-12 bg-white max-w-[50rem]">
