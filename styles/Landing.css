@@ -138,6 +138,10 @@
     opacity: 1;
   }
 
+  .about-container .footer-container{
+    @apply -mt-52
+  }
+
  
   @media(min-width:350px){
     .faq-item .open{

@@ -4,7 +4,7 @@ const MobileApp = () => {
 
     return(
         <>
-        <div className="flex flex-col pb-96 md:pb-0">
+        <div className="flex flex-col pb-[35rem] md:pb-0">
             <div className=" w-[99%]  flex flex-col ">
                 <div className="2xl:w-[30%]  w-[95%] md:w-[80%]  flex flex-col items-center 2xl:items-start 2xl:text-left mx-auto 2xl:ml-[20%]">
                     <h1 className="text-5xl font-bold">Download our app for special offers and rewards</h1>

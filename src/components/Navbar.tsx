@@ -42,9 +42,10 @@ const Navbar = () => {
     }
 
   return (
-    <div className="z-20 absolute right-0 left-0 mx-auto  top-0 flex ">
+    <div>
+    <div className="sticky top-0 left-0 right-0 z-20">
       <Link to="/">
-        <div className="absolute mt-5 ml-5 2xl:ml-[20%] md:ml-[5%] flex">
+        <div className="flex mt-5 ml-3 2xl:ml-[20%] md:ml-[5%]">
           <img className="w-[4rem] mt-1.5 mr-2 " src="/images/blue-car.png" alt="" />
           <div>
             <h1 className="text-2xl font-bold mt-3">CAR</h1>
@@ -54,7 +55,7 @@ const Navbar = () => {
       </Link>
       {window.innerWidth < 1024 ? (
         <div>
-           <div className="absolute top-10 right-8 mr-10 z-50">
+           <div className="absolute top-6 right-8 mr-10 z-50">
                   <div className={`menu-btn ${showMenu ? "active" : ""}`} onClick={toggleMenu}>
                     {/* <div className={`menu-line ${showMenu ? "menu-line-1" : ""}`}></div>
                     <div className={`menu-line ${showMenu ? "menu-line-2" : ""}`}></div>
@@ -90,7 +91,7 @@ const Navbar = () => {
            
         </div>
       ) : (
-        <ul onClick={toggleMenu} className="nav-container ">
+        <ul onClick={toggleMenu} className="nav-container -mt-7">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -113,7 +114,7 @@ const Navbar = () => {
       )}
       {window.innerWidth < 1024 ? (
         <div>
-          <img onClick={toggleSignIn} className="cursor-pointer w-7 absolute right-5  top-10" src="/images/user.png" title="user icons"/>
+          <img onClick={toggleSignIn} className="cursor-pointer w-7 absolute right-5  top-6" src="/images/user.png" title="user icons"/>
           {showSignIn && (
             <div className="absolute right-0 md:right-24 top-24 shadow-md bg-white rounded-sm p-5 h-80 w-[100%] md:w-96">
               <div className="border py-5 px-10 md:py-10 mx-auto w-[90%] ">
@@ -134,7 +135,7 @@ const Navbar = () => {
           )} 
       </div>
       ) : (
-        <div className="absolute right-10 top-10 md:right-[5%] lg:right-[5%] 2xl:right-[20%]">
+        <div className="absolute right-10 top-5 md:right-[5%] lg:right-[5%] 2xl:right-[18%]">
           <button onClick={toggleSignIn} className="mr-6 font-bold">Sign In</button>
           <button onClick={toggleRegister} className="bg-blue-500 text-white h-10 w-28 font-bold rounded-sm shadow-blue-500 shadow-md">Register</button>
           {showSignIn && (
@@ -155,6 +156,7 @@ const Navbar = () => {
           )} 
         </div>
       )}
+    </div>
     </div>
   );
 };

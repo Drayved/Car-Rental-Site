@@ -1,12 +1,10 @@
-import ContactBanner from "./ContactBanned"
+import ContactBanner from "./ContactBanner"
 import PageHeader from "./PageHeader"
 import PlanTrip from "./PlanTrip"
 import { useLocation } from 'react-router-dom'
 
 
 const About = () => {
-    
-    
     const location = useLocation();
     console.log(location.pathname.slice(1, 100))
 
@@ -14,13 +12,13 @@ const About = () => {
     
   
     return(
-        <div className="mt-52">
+        <div className="mt-20 about-container">
             
                 <PageHeader />
             
             <div className="mt-72 gap-10 flex justify-center w-[90%] lg:w-[40%] mx-auto flex-col items-center lg:flex-row">
-                <img className=" mx-auto w-[27rem] h-[33rem] md:min-w-[33rem]  min-w-[10rem]" src="/images/about-img.jpg" alt="" />
-                <div className="flex flex-col items-center mr-20   w-[100%] sm:min-w-[25rem] sm:w-[25rem] ml-16">
+                <img className=" mx-auto w-[100%]  h-[33rem] md:min-w-[33rem] md:w-[33rem]  min-w-[10rem]" src="/images/about-img.jpg" alt="" />
+                <div className="flex flex-col items-center mr-20   w-[100%]  md:w-[33rem] ml-16">
                     <h4 className="text-lg font-bold">About Company</h4>
                     <h1 className="text-3xl font-bold">You start the engine and your adventure begins</h1>
                     <p className="text-gray-500 mt-3">
@@ -32,7 +30,7 @@ const About = () => {
                         vacation, or a daily commute, we're here to ensure your drive is more than just 
                         transportation – it's the start of an unforgettable adventure.
                     </p>
-                    <div className="flex flex-col md:flex-row mt-5 gap-12">
+                    <div className="flex flex-col xsmall:flex-row mt-5 gap-28">
                         <div className="flex-col  ">
                             <img className="w-16 " src="/images/car.png" alt="" />
                             <div className="flex flex-col md:flex-row">
@@ -65,7 +63,7 @@ const About = () => {
                 <PlanTrip />
             </div>
 
-            <div className="mt-96 md:mt-0">
+            <div className="mt-[30rem] md:mt-0">
                 <ContactBanner />
             </div>
             

@@ -7,6 +7,7 @@ import "../styles/Nav.css"
 import "../styles/Landing.css"
 import About from "./components/About";
 import Models from "./components/Models";
+import Testimonials from "./components/Testimonials";
 
 const defaultAuthValue = null
 
@@ -27,7 +28,7 @@ function App() {
         <Route index element={<Landing />} />
         <Route path={"/about"} element={<About />}/> 
         <Route path="models" element={<Models />} />
-        
+        <Route path="testimonials" element={<Testimonials />} />
       </Route>
     )
   );
