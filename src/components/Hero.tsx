@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="flex ">
                 <div className="flex flex-col md:min-w-[25rem] relative z-10  md:mt-28">
                     <h3 className="text-2xl font-bold mb-3 z-20 relative">Plan your trip now</h3>
-                    <h1 className="text-6xl font-bold z-20 relative w-[18rem] xs:w-[100%] mx-auto md:mx-0">Save <span className="text-blue-500">big</span> with our car rental</h1>
+                    <h1 className="text-6xl font-bold z-20 relative w-[18rem] xs:w-[100%] mx-auto md:mx-0">Save <span className="text-[#00a8f3]">big</span> with our car rental</h1>
                     <div className="mt-8 text-gray-500 px-3 small:px-10 md:px-0 z-10 relative">
                         <p className=" text-gray-500 mx-auto text-left leading-6 mb-4">
                             Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.
@@ -17,8 +17,8 @@ const Hero = () => {
                         
                     </div>
                 </div>
-                <div className="relative blue-car-container hidden md:flex z-10 w-screen bg-blue-500 h-0  ">
-                    <img className="blue-car absolute z-10 mx-auto w-[100%] mt-40 md:mt-60 lg:mt-40 xl:mt-16 min-w-[21rem] max-w-[45rem] xl:max-w-[53rem] " src="/images/main-car.png" alt="" />
+                <div className="relative blue-car-container hidden md:flex z-10 w-screen bg-[#00a8f3] h-0  ">
+                    <img className="blue-car absolute z-10 mx-auto w-[100%] mt-40 xl:mt-16 min-w-[22rem]  xl:max-w-[53rem] " src="/images/main-car-2.png" alt="" />
                 </div>
                 
             </div>   

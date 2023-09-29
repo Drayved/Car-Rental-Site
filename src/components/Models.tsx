@@ -53,7 +53,7 @@ const Models = () => {
                         </div> 
                         
                         <div className="flex justify-center pb-5 border-t w-[90%] mx-auto pt-5">
-                            <button className="py-5 shadow-md shadow-blue-200 bg-blue-500 w-[90%] justify-center text-white text-2xl font-bold flex">Book Ride</button>
+                            <button className="py-5 shadow-md shadow-blue-200 bg-[#00a8f3] w-[90%] justify-center text-white text-2xl font-bold flex">Book Ride</button>
                         </div>
                     </div>   
                 ))}

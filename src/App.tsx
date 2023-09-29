@@ -5,9 +5,12 @@ import Layout from "./components/Layout"
 import Landing from "./components/Landing";
 import "../styles/Nav.css"
 import "../styles/Landing.css"
+import "../styles/Contact.css"
 import About from "./components/About";
 import Models from "./components/Models";
 import Testimonials from "./components/Testimonials";
+import OurTeam from "./components/OurTeam";
+import Contact from "./components/Contact";
 
 const defaultAuthValue = null
 
@@ -29,6 +32,8 @@ function App() {
         <Route path={"/about"} element={<About />}/> 
         <Route path="models" element={<Models />} />
         <Route path="testimonials" element={<Testimonials />} />
+        <Route path="our-team" element={<OurTeam />} />
+        <Route path="contact" element={<Contact />} />
       </Route>
     )
   );

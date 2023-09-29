@@ -37,7 +37,7 @@ const Faq = () => {
             selectedOption === "option1" ? "open h-[25.5rem] xxs:h-[24rem] xs:h-[22rem] xsmall:h-[20rem] small:h-[18.5rem] medium:h-[15.5rem] sm:h-[15.3rem] md:h-[14rem] " : ""
           }`}
         >
-          <label className={`${selectedOption === "option1" ? "text-white bg-blue-500 shadow-blue-300 shadow-md " : ""}`}>
+          <label className={`${selectedOption === "option1" ? "text-white bg-[#00a8f3] shadow-blue-300 shadow-md " : ""}`}>
             1. What is special about comparing rental car deals?
             </label>
             {selectedOption === "option1" && (
@@ -62,7 +62,7 @@ const Faq = () => {
             selectedOption === "option2" ? "open  h-[25.5rem] xxs:h-[24rem] xs:h-[22rem] xsmall:h-[20rem] small:h-[18.5rem] medium:h-[15.5rem] sm:h-[15.3rem] md:h-[14rem]" : ""
           }`}
         >
-            <label className={`${selectedOption === "option2" ? "text-white bg-blue-500 shadow-md shadow-blue-200" : ""}`}>
+            <label className={`${selectedOption === "option2" ? "text-white bg-[#00a8f3] shadow-md shadow-blue-200" : ""}`}>
                 2. How do I find the car rental deals?
             </label>
           {selectedOption === "option2" && (
@@ -82,7 +82,7 @@ const Faq = () => {
             selectedOption === "option3" ? "open h-[28.5rem] xxs:h-[25rem] xs:h-[25rem] xsmall:h-[22rem] small:h-[19rem] medium:h-[17rem] sm:h-[16rem] " : ""
           }`}
         >
-        <label className={`${selectedOption === "option3" ? "text-white   bg-blue-500 shadow-md shadow-blue-200" : ""}`}>
+        <label className={`${selectedOption === "option3" ? "text-white   bg-[#00a8f3] shadow-md shadow-blue-200" : ""}`}>
             3. How do I find the lowest rental car prices?
         </label>
           {selectedOption === "option3" && (

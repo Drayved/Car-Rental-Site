@@ -10,9 +10,9 @@ const Footer = () => {
             </div>
             <div className="w-full md:w-1/4 mb-12">
               <h1 className="text-2xl font-bold mb-4">COMPANY</h1>
-              <p className="mb-2">Careers</p>
-              <p className="mb-2">About</p>
-              <p className="mb-2">Contact</p>
+              <p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">Careers</p>
+              <p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">About</p>
+              <p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">Contact</p>
             </div>
             <div className="w-full md:w-1/4 mb-12">
               <h1 className="text-2xl font-bold mb-4">WORKING HOURS</h1>
@@ -30,7 +30,7 @@ const Footer = () => {
                   type="text"
                 />
                 <button
-                  className="w-full md:w-[15rem] lg:w-[18rem] bg-blue-500 text-white text-lg py-2 mt-2"
+                  className="w-full md:w-[15rem] lg:w-[18rem] bg-[#00a8f3] text-white text-lg py-2 mt-2"
                   type="submit"
                 >
                   Submit

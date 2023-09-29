@@ -43,16 +43,22 @@ const Navbar = () => {
 
   return (
     <div>
-    <div className="sticky top-0 left-0 right-0 z-20">
-      <Link to="/">
-        <div className="flex mt-5 ml-3 2xl:ml-[20%] md:ml-[5%]">
-          <img className="w-[4rem] mt-1.5 mr-2 " src="/images/blue-car.png" alt="" />
-          <div>
-            <h1 className="text-2xl font-bold mt-3">CAR</h1>
-            <h2 className="font-semibold text-lg mt-[-7px]">Rental</h2>
-          </div>
+    <div className="sticky top-0 left-0 right-0 z-20" >
+      
+        <div className="flex mt-5 ml-7 2xl:ml-[20%] md:ml-[5%]">
+          
+          <Link to="/">
+            <div className="flex">
+              <img className="w-[4rem] h-[3.4rem] mt-1.5 mr-3" src="/images/blue-car.png" alt="" />
+              <div>
+                <h1 className="text-2xl font-bold mt-3">CAR</h1>
+                <h2 className="rental-logo text-lg mt-[-7px]">Rental</h2>
+              </div>
+            </div>
+          </Link>
+          
         </div>
-      </Link>
+      
       {window.innerWidth < 1024 ? (
         <div>
            <div className="absolute top-6 right-8 mr-10 z-50">
@@ -116,7 +122,7 @@ const Navbar = () => {
         <div>
           <img onClick={toggleSignIn} className="cursor-pointer w-7 absolute right-5  top-6" src="/images/user.png" title="user icons"/>
           {showSignIn && (
-            <div className="absolute right-0 md:right-24 top-24 shadow-md bg-white rounded-sm p-5 h-80 w-[100%] md:w-96">
+            <div className="absolute  md:right-0 top-24 shadow-md bg-white rounded-sm p-5 h-80 w-[100%] md:w-[40rem]">
               <div className="border py-5 px-10 md:py-10 mx-auto w-[90%] ">
                 <p className="absolute top-1 bg-white p-2">Sign In</p>
               
@@ -128,7 +134,7 @@ const Navbar = () => {
                 </div>
                 
                 <button className="mr-10 font-bold">Sign In</button>
-                <button className="bg-blue-500 text-white h-10 w-28 font-bold rounded-sm shadow-blue-500 shadow-md">Register</button>
+                <button className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
               </div>
             </div>
             
@@ -137,19 +143,19 @@ const Navbar = () => {
       ) : (
         <div className="absolute right-10 top-5 md:right-[5%] lg:right-[5%] 2xl:right-[18%]">
           <button onClick={toggleSignIn} className="mr-6 font-bold">Sign In</button>
-          <button onClick={toggleRegister} className="bg-blue-500 text-white h-10 w-28 font-bold rounded-sm shadow-blue-500 shadow-md">Register</button>
+          <button onClick={toggleRegister} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
           {showSignIn && (
-            <div className="absolute right-0 md:right-24 top-24 shadow-md bg-white rounded-sm p-5 h-80 w-[100%] md:w-96">
-              <div className="border py-5 px-10 md:py-10 mx-auto w-[90%] ">
+            <div className="absolute right-0 top-24 shadow-sm bg-white rounded-sm p-5  w-[100%] md:w-[40rem]">
+              <div className="border border-[#00a8f3] py-5 px-10 md:py-10 mx-auto  ">
                 <p className="absolute top-1 bg-white p-2">{registerClicked ? "Sign up" : "Sign In"}</p>
               
                 <div className="flex flex-col gap-3 mb-5">
                   <label htmlFor="Email Address" className="text-left mb-[-10px]">Email Address:</label>
-                  <input className="p-2 shadow-sm shadow-black " type="email" placeholder="Email" />
+                  <input className="p-2 shadow-sm shadow-gray-400" type="email" placeholder="Email" />
                   <label htmlFor="" className="text-left mb-[-10px]">Password:</label>
-                  <input className="p-2 shadow-sm shadow-black" type="password" placeholder="Password" />
+                  <input className="p-2 shadow-sm shadow-gray-400" type="password" placeholder="Password" />
                 </div>
-                <button className="bg-blue-500 text-white h-10 w-28 font-bold rounded-sm shadow-blue-500 shadow-md">{registerClicked ? "Sign Up" : "Sign In"}</button>
+                <button className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">{registerClicked ? "Sign Up" : "Sign In"}</button>
               </div>
             </div>
             

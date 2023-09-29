@@ -50,10 +50,10 @@ const ChooseCar = () => {
                             <tr>
                               <th colSpan={2} className="text-left">
                                 <div className="flex w-[100%]">
-                                  <p className="bg-blue-500 pl-10 text-white py-2 pr-2 text-3xl font-bold">
+                                  <p className="bg-[#00a8f3] pl-10 text-white py-2 pr-2 text-3xl font-bold">
                                     {selectedVehicle.details.Cost}
                                   </p>
-                                  <p className="bg-blue-500 text-white pt-1.5 w-full text-2xl font-normal">
+                                  <p className="bg-[#00a8f3] text-white pt-1.5 w-full text-2xl font-normal">
                                     <span className="text-3xl font-light relative top-0.5">/</span> rent per day
                                   </p>
                                 </div>
@@ -79,7 +79,7 @@ const ChooseCar = () => {
                           <tfoot>
                             <tr>
                               <td colSpan={2}>
-                                <button className="bg-blue-500 mt-3 w-full text-white h-12 text-2xl shadow-md shadow-black font-bold rounded-sm">
+                                <button className="bg-[#00a8f3] mt-3 w-full text-white h-12 text-2xl shadow-md shadow-black font-bold rounded-sm">
                                   Reserve Now
                                 </button>
                               </td>

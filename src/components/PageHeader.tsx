@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom"
 import { useLocation } from "react-router-dom"
+
 const PageHeader = () => {
     const location = useLocation()
+
     return(
         <div className="relative">
             <div className=" ml-5 2xl:ml-[20%] md:ml-[5%]">
-                <h1 className="font-bold text-3xl capitalize">{location.pathname.slice(1,50)}</h1>
+                <h1 className="font-bold text-3xl capitalize">{location.pathname.slice(1,50).replace(/[^\w\s]/gi, ' ')}</h1>
                 <button className="font-semibold text-md mt-5">
-                    <Link to="/">Home</Link> /<span className="capitalize">{location.pathname.slice(1,50)}</span>
+                    <Link to="/">Home</Link> /<span className="capitalize">{location.pathname.slice(1,50).replace(/[^\w\s]/gi, ' ')}</span>
                 </button>
                     
                 

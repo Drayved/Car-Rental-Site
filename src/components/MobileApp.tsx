@@ -14,8 +14,8 @@ const MobileApp = () => {
                         if you book your car through our app! 
                     </p>
                     <div className=" mt-10 gap-2 small:gap-7 flex flex-col sm:justify-start items-start xsmall:flex-row ">
-                        <img className="w-52" src="/images/google-store.svg" alt="" />
-                        <img className="w-52" src="/images/apple-store.svg" alt="" />
+                        <img className="w-52 cursor-pointer" src="/images/google-store.svg" alt="" />
+                        <img className="w-52 cursor-pointer" src="/images/apple-store.svg" alt="" />
                     </div>
                 </div>
                 
@@ -23,7 +23,7 @@ const MobileApp = () => {
             
             </div>
             <div className="relative ">
-                <img className=" absolute w-[60rem] -top-[27rem] hidden 2xl:flex  -right-52  z-10 " src="/images/mobile-app.png" alt="" />
+                <img className=" absolute w-[60rem] -top-[27rem] hidden 2xl:flex right-0 z-10 " src="/images/mobile-app.png" alt="" />
             </div>
            
         </div>

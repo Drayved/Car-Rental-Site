@@ -11,18 +11,22 @@
     @apply mt-5 flex items-center text-white text-lg font-bold gap-5
 }
 
+.rental-logo{
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5)
+}
+
 /* top-buttons */
 
 .book-ride-btn{
-    @apply bg-blue-500 w-60 py-3 h-[3.5rem] rounded-sm border-blue-500 border-2 md:mb-6 md:mb-0
+    @apply bg-[#00a8f3] w-60 py-3 h-[3.5rem] rounded-sm border-[#00a8f3] border-2 md:mb-6 md:mb-0
 }
 
 .book-ride-btn:hover{
-    @apply bg-white text-blue-500 border-2 border-blue-500  transition-colors duration-300
+    @apply bg-white text-[#00a8f3] border-2 border-[#00a8f3]  transition-colors duration-300
 }
 
 .book-ride-btn:hover .checkmark{
-    @apply fill-blue-500 border-blue-500 
+    @apply fill-[#00a8f3] border-[#00a8f3] 
 }
 
 .checkmark{
@@ -67,11 +71,11 @@
 
 .form-btn{
     @apply mt-8 h-11 text-center py-[0.7rem] text-white font-bold w-[100%]
-    rounded-sm shadow-md shadow-blue-200  bg-blue-500;
+    rounded-sm shadow-md shadow-blue-200  bg-[#00a8f3];
 }
 
 .asterisk{
-    @apply text-blue-500 text-2xl p-0 h-0 m-0
+    @apply text-[#00a8f3] text-2xl p-0 h-0 m-0
 
 }
 
@@ -95,7 +99,7 @@
 
   .vehicle-btns:hover,
   .vehicle-btns:focus{
-    @apply bg-blue-500 text-white transition-colors duration-500
+    @apply bg-[#00a8f3] text-white transition-colors duration-500
   }
 
   /* Testimonials */
@@ -126,7 +130,7 @@
   /* Scroll button */
 
   .scroll-to-top {
-    @apply fixed bottom-5 right-5 w-10 h-10 bg-blue-500 rounded-full flex justify-center items-center opacity-0 cursor-pointer z-50;
+    @apply fixed bottom-5 right-5 w-10 h-10 bg-[#00a8f3] rounded-full flex justify-center items-center opacity-0 cursor-pointer z-50;
 
 
     
@@ -137,9 +141,6 @@
   .scroll-to-top.visible {
     opacity: 1;
   }
-
-
-
  
   @media(min-width:350px){
     .faq-item .open{
