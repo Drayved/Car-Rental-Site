@@ -36,7 +36,7 @@ const ChooseCar = () => {
                 <div className="w-full flex flex-col md:flex-row">
 
                 <div className="w-full sm:mt-0 h-full mb-6  flex md:items-start xl:mr:0 xl:mb-0">
-                  <img className="xl:flex car-imgs mx-auto my-auto mt-12 md:mt-32 w-[100%] max-w-[40rem] " src={selectedVehicle.imageSrc} alt={selectedVehicle.name} />  
+                  <img className="xl:flex car-imgs mx-auto my-auto mt-12 h-96 md:mt-32 w-[100%] max-w-[40rem] " src={selectedVehicle.imageSrc} alt={selectedVehicle.name} />  
                 </div>
                 
                                 
