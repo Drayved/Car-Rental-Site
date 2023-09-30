@@ -5,8 +5,7 @@ const LandingTestimonials = () => {
     return(
         <div>
             <div className="flex justify-center flex-col items-center">
-                <h4 className="font-bold text-2xl">Reviewed by People</h4>
-                <h1 className="font-bold text-5xl text-center mt-3">Clients Testimonials</h1>
+                <h1 className="font-bold text-5xl text-center mt-3">Client Testimonials</h1>
                 <p className="text-left text-lg mt-7 text-gray-500 font-semibold w-[90%] sm:text-center lg:w-[50%]">
                     Discover the positive impact we've made on the our clients by reading through their 
                     testimonials. Our clients have experienced our service and results, and they're eager

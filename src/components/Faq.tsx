@@ -20,7 +20,7 @@ const Faq = () => {
       <div className="relative z-50 flex flex-col items-center  small:text-center w-[90%] mx-auto">
       
                
-        <h3 className="text-2xl font-bold mb-3">FAQ</h3>
+        
         <h1 className="text-5xl font-bold mb-5 leading-[3.5rem]">
           Frequently Asked Questions
         </h1>
