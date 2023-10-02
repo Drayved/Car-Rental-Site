@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import axios from 'axios'
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(window.innerWidth >= 1024);
     const [showSignIn, setShowSignIn] = useState(false)
     const [registerClicked, setRegisterClicked] = useState(false)
+    const [formData, setFormData] = useState({
+      name: "",
+      password: "",
+    });
 
     useEffect(() => {
       const handleResize = () => {
@@ -40,6 +44,32 @@ const Navbar = () => {
         setShowSignIn(false)
       }
     }
+
+    const handleRegister = async () => {
+      try {
+        console.log(formData)
+        await axios.post("http://localhost:3000/users", formData);
+        
+        console.log("User registered successfully");
+      } catch (error) {
+        console.error("Error registering user", error);
+      }
+    };
+  
+    const handleSignIn = async () => {
+      try {
+        const response = await axios.post("http://localhost:3000/users/login", formData);
+
+        if (response.data === "Success") {
+          console.log("User signed in successfully");
+        } else {
+          console.error("Sign-in failed. Server response:", response.data);
+        }
+      } catch (error) {
+        console.error("Error signing in", error);
+      }
+    };
+
 
   return (
     <div>
@@ -127,14 +157,26 @@ const Navbar = () => {
                 <p className="absolute top-1 bg-white p-2">Sign In</p>
               
                 <div className="flex flex-col gap-3 mb-5">
-                  <label htmlFor="Email Address" className="text-left mb-[-10px]">Email Address:</label>
-                  <input className="p-2 shadow-sm shadow-black " type="email" placeholder="Email" />
-                  <label htmlFor="" className="text-left mb-[-10px]">Password:</label>
-                  <input className="p-2 shadow-sm shadow-black" type="password" placeholder="Password" />
+                  <label className="text-left mb-[-10px]">Username</label>
+                  <input
+                    className="p-2 shadow-sm shadow-black "
+                    type="text" 
+                    placeholder="Username" 
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  />
+                  <label className="text-left mb-[-10px]">Password:</label>
+                  <input
+                    className="p-2 shadow-sm shadow-black"
+                    type="password"
+                    placeholder="Password"
+                    value={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  />
                 </div>
                 
-                <button className="mr-10 font-bold">Sign In</button>
-                <button className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
+                <button onClick={handleSignIn} className="mr-10 font-bold">Sign In</button>
+                <button onClick={handleRegister} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
               </div>
             </div>
             
@@ -150,12 +192,24 @@ const Navbar = () => {
                 <p className="absolute top-1 bg-white p-2">{registerClicked ? "Sign up" : "Sign In"}</p>
               
                 <div className="flex flex-col gap-3 mb-5">
-                  <label htmlFor="Email Address" className="text-left mb-[-10px]">Email Address:</label>
-                  <input className="p-2 shadow-sm shadow-gray-400" type="email" placeholder="Email" />
-                  <label htmlFor="" className="text-left mb-[-10px]">Password:</label>
-                  <input className="p-2 shadow-sm shadow-gray-400" type="password" placeholder="Password" />
+                  <label className="text-left mb-[-10px]">Username:</label>
+                  <input
+                    className="p-2 shadow-sm shadow-gray-400"
+                    type="text"
+                    placeholder="Username"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  />
+                  <label className="text-left mb-[-10px]">Password:</label>
+                  <input
+                    className="p-2 shadow-sm shadow-gray-400"
+                    type="password" 
+                    placeholder="Password" 
+                    value={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  />
                 </div>
-                <button className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">{registerClicked ? "Sign Up" : "Sign In"}</button>
+                <button onClick={registerClicked ? handleRegister : handleSignIn} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">{registerClicked ? "Sign Up" : "Sign In"}</button>
               </div>
             </div>
             

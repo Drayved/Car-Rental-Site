@@ -1,7 +1,4 @@
 
-
-
-
 export interface Vehicle {
     name: string;
     imageSrc: string;
