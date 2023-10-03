@@ -14,7 +14,7 @@ const Landing = () => {
     return(
             <>
                 {/* Hero section */}
-                <div className="mt-[5vh] md:mt-[28vh] md:ml-[10%] 2xl:ml-[20%]">
+                <div className="mt-[5vh] md:mt-[20vh] md:ml-[10%] 2xl:ml-[20%]">
                     <Hero />
                 </div>
                 

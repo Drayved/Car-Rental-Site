@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 
-.top-section-container{
-    @apply md:mt-[30vh] text-center 
-}
 
 .top-button-container{
     @apply mt-5 flex items-center text-white text-lg font-bold gap-5
