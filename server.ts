@@ -29,6 +29,10 @@ app.post('/users', async (req: Request, res: Response) => {
         // Use the defined interface to specify the structure of the request body
         const requestBody: CreateUserRequestBody = req.body;
 
+        if(users.find(user => user.name === req.body.name)) {
+            return res.status(409).send({error: 'Username taken'})
+        }
+
         if (requestBody && requestBody.name && requestBody.password) {
             const hashedPassword = await bcrypt.hash(requestBody.password, salt);
             const user = { name: requestBody.name, password: hashedPassword };
@@ -39,7 +43,7 @@ app.post('/users', async (req: Request, res: Response) => {
         }
     } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
+        return res.status(500).send('Internal Server Error');
     }
 });
 

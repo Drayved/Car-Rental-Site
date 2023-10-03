@@ -16,7 +16,7 @@ const About = () => {
             
                 <PageHeader />
             
-            <div className="mt-72 gap-10 flex justify-center w-[90%] lg:w-[40%] mx-auto flex-col items-center lg:flex-row">
+            <div className="mt-72 gap-10 flex justify-center w-[90%]  mx-auto flex-col items-center xl:flex-row">
                 <img className=" mx-auto w-[100%]  h-[33rem] md:min-w-[33rem] md:w-[33rem]  min-w-[10rem]" src="/images/about-img.jpg" alt="" />
                 <div className="flex flex-col items-center mr-20   w-[100%]  md:w-[33rem] ml-16">
                     <h4 className="text-lg font-bold">About Company</h4>

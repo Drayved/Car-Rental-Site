@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from 'axios'
+import axios, { AxiosError } from 'axios';
+
+
+
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(window.innerWidth >= 1024);
     const [showSignIn, setShowSignIn] = useState(false)
     const [registerClicked, setRegisterClicked] = useState(false)
-    const [registered, setRegistered] = useState(false)
     const [signedIn, setSignedIn] = useState(false)
     const [formData, setFormData] = useState({
       name: "",
@@ -48,14 +50,41 @@ const Navbar = () => {
       }
     }
 
+    const handleAxiosError = (error: AxiosError) => {
+      if (error.response) {
+        // Axios error with a response from the server
+        if (error.response.status === 409) {
+          alert("Username is taken. Please choose another.");
+        } else {
+          console.error("Error with response:", error.response.data);
+        }
+      } else if (error.request) {
+        // Axios error without a response from the server (e.g., network error)
+        console.error("Error with no response:", error.message);
+      } else {
+        // Other errors
+        console.error("Unknown error:", error);
+      }
+    };
+    
+    // Your handleRegister function
     const handleRegister = async () => {
       try {
-        console.log(formData)
-        await axios.post("http://localhost:3000/users", formData);
-        setRegistered(true)
-        console.log("User registered successfully");
+        console.log(formData);
+        const response = await axios.post("http://localhost:3000/users", formData);
+    
+        if (response.status === 201) {
+          alert("User registered successfully")
+          console.log("User registered successfully");
+        }
       } catch (error) {
-        console.error("Error registering user", error);
+        if (axios.isAxiosError(error)) {
+          // Handle Axios errors using the custom error handler
+          handleAxiosError(error);
+        } else {
+          // Handle other errors here
+          console.error("Unknown error:", error);
+        }
       }
     };
   
@@ -100,9 +129,6 @@ const Navbar = () => {
         <div>
            <div className="absolute top-6 right-8 mr-10 z-50">
                   <div className={`menu-btn ${showMenu ? "active" : ""}`} onClick={toggleMenu}>
-                    {/* <div className={`menu-line ${showMenu ? "menu-line-1" : ""}`}></div>
-                    <div className={`menu-line ${showMenu ? "menu-line-2" : ""}`}></div>
-                    <div className={`menu-line ${showMenu ? "menu-line-3" : ""}`}></div> */}
                     <div className="menu-btn-burger"></div>
                   </div>
             </div>
@@ -159,11 +185,11 @@ const Navbar = () => {
         <div>
           <img onClick={toggleSignIn} className="cursor-pointer w-7 absolute right-5  top-6" src="/images/user.png" title="user icons"/>
           {showSignIn && (
-            <div className="absolute  md:right-0 top-24 shadow-md bg-white rounded-sm p-5 h-80 w-[100%] md:w-[40rem]">
-              <div className="border py-5 px-10 md:py-10 mx-auto w-[90%] ">
-                <p className="absolute top-1 bg-white p-2">Sign In</p>
+            <div className="absolute  md:right-0 top-24 shadow-md bg-white rounded-sm p-5 h-auto w-[100%] md:w-[40rem]">
+              <div className="border border-[#00a8f3] py-5 h-full px-10 md:py-10 mx-auto w-[90%] ">
+                <p className="absolute top-1 bg-white p-2">{signedIn ? `Signed in` : `Sign In` }</p>
               
-                <div className="flex flex-col gap-3 mb-5">
+                <div className={`flex flex-col gap-3 mb-5 ${signedIn ? "hidden" : ""}`}>
                   <label className="text-left mb-[-10px]">Username</label>
                   <input
                     className="p-2 shadow-sm shadow-black "
@@ -181,9 +207,23 @@ const Navbar = () => {
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   />
                 </div>
-                
-                <button onClick={handleSignIn} className="mr-10 font-bold">Sign In</button>
-                <button onClick={handleRegister} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
+                <div className="flex">
+                  {signedIn ? 
+                  <div className="flex flex-col mx-auto">
+                    <p className="text-[#00a8f3] font-bold mb-2">Signed in as {formData.name}</p>
+                    <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Sign Out</button>
+                  </div>
+                    :
+                    <div>
+                      <button onClick={handleSignIn} className="mr-10 font-bold mt-4 w-16">Sign In</button>
+                      <button onClick={handleRegister} className="bg-[#00a8f3] mt-5 text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
+                     
+                    </div>
+                   
+                  }
+                    
+                  
+                </div>
               </div>
             </div>
             
@@ -198,7 +238,7 @@ const Navbar = () => {
               <div className="border border-[#00a8f3] py-5 px-10 md:py-10 mx-auto  ">
                 <p className="absolute top-1 bg-white p-2">{registerClicked ? "Sign up" : "Sign In"}</p>
               
-                <div className={`flex flex-col gap-3 mb-5 ${signedIn && !registerClicked ? "hidden" : "flex"}`}>
+                <div className={`flex flex-col gap-3 mb-5 ${signedIn ? "hidden" : "flex"}`}>
                   <label className="text-left mb-[-10px]">Username:</label>
                   <input
                     className="p-2 shadow-sm shadow-gray-400"
@@ -216,24 +256,16 @@ const Navbar = () => {
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   />
                 </div>
-                {registered && registerClicked ? 
-                <div>
-                  <p className="text-[#00a8f3] font-bold text-center">Successfully registered</p> 
-                  <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
-                </div>
-                  :
-                  signedIn ? 
-                  <div className="flex flex-col">
-                     <p className="text-[#00a8f3] font-bold text-center">Signed in as {formData.name}</p>
+                 {signedIn ? 
+                  <div className="flex flex-col mx-auto items-center">
+                    <p className="text-[#00a8f3] font-bold text-center mb-2">Signed in as {formData.name}</p>
                     <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Sign Out</button>
                   </div>
                   :
                   <button onClick={registerClicked ? handleRegister : handleSignIn} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">{registerClicked ? "Sign Up" : "Sign In"}</button>
                 }
-               
               </div>
             </div>
-            
           )} 
         </div>
       )}

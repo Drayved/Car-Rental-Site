@@ -4,14 +4,14 @@ const Hero = () => {
 
     return(
         
-        <div className="top-section-container  mx-auto md:text-left ">
+        <div className="top-section-container  mx-auto text-left ">
             <img className="absolute right-0 top-0 z-10 pointer-events-none hidden md:flex h-[65%]  min-w-[30rem] opacity-50" src="/images/hero-bg.png" alt="" />
-            <div className="flex ">
+            <div className="flex ml-2">
                 <div className="flex flex-col md:min-w-[25rem] relative z-10  md:mt-28">
                     <h3 className="text-2xl font-bold mb-3 z-20 relative">Plan your trip now</h3>
                     <h1 className="text-6xl font-bold z-20 relative w-[18rem] xs:w-[100%] mx-auto md:mx-0">Save <span className="text-[#00a8f3]">big</span> with our car rental</h1>
-                    <div className="mt-8 text-gray-500 px-3 small:px-10 md:px-0 z-10 relative">
-                        <p className=" text-gray-500 mx-auto text-left leading-6 mb-4">
+                    <div className="mt-8 text-gray-500 px-4  md:px-0 z-10 relative">
+                        <p className=" text-gray-500 mx-auto text-left mb-4">
                             Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.
                         </p>
                         
