@@ -5,10 +5,13 @@ const Navbar = () => {
     const [showMenu, setShowMenu] = useState(window.innerWidth >= 1024);
     const [showSignIn, setShowSignIn] = useState(false)
     const [registerClicked, setRegisterClicked] = useState(false)
+    const [registered, setRegistered] = useState(false)
+    const [signedIn, setSignedIn] = useState(false)
     const [formData, setFormData] = useState({
       name: "",
       password: "",
     });
+    
 
     useEffect(() => {
       const handleResize = () => {
@@ -49,7 +52,7 @@ const Navbar = () => {
       try {
         console.log(formData)
         await axios.post("http://localhost:3000/users", formData);
-        
+        setRegistered(true)
         console.log("User registered successfully");
       } catch (error) {
         console.error("Error registering user", error);
@@ -62,6 +65,7 @@ const Navbar = () => {
 
         if (response.data === "Success") {
           console.log("User signed in successfully");
+          setSignedIn(true)
         } else {
           console.error("Sign-in failed. Server response:", response.data);
         }
@@ -70,6 +74,9 @@ const Navbar = () => {
       }
     };
 
+    const handleSignOut = () => {
+      setSignedIn(false)
+    }
 
   return (
     <div>
@@ -191,7 +198,7 @@ const Navbar = () => {
               <div className="border border-[#00a8f3] py-5 px-10 md:py-10 mx-auto  ">
                 <p className="absolute top-1 bg-white p-2">{registerClicked ? "Sign up" : "Sign In"}</p>
               
-                <div className="flex flex-col gap-3 mb-5">
+                <div className={`flex flex-col gap-3 mb-5 ${signedIn && !registerClicked ? "hidden" : "flex"}`}>
                   <label className="text-left mb-[-10px]">Username:</label>
                   <input
                     className="p-2 shadow-sm shadow-gray-400"
@@ -209,7 +216,21 @@ const Navbar = () => {
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   />
                 </div>
-                <button onClick={registerClicked ? handleRegister : handleSignIn} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">{registerClicked ? "Sign Up" : "Sign In"}</button>
+                {registered && registerClicked ? 
+                <div>
+                  <p className="text-[#00a8f3] font-bold text-center">Successfully registered</p> 
+                  <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
+                </div>
+                  :
+                  signedIn ? 
+                  <div className="flex flex-col">
+                     <p className="text-[#00a8f3] font-bold text-center">Signed in as {formData.name}</p>
+                    <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Sign Out</button>
+                  </div>
+                  :
+                  <button onClick={registerClicked ? handleRegister : handleSignIn} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">{registerClicked ? "Sign Up" : "Sign In"}</button>
+                }
+               
               </div>
             </div>
             

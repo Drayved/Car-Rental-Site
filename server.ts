@@ -36,7 +36,6 @@ app.post('/users', async (req: Request, res: Response) => {
             res.status(201).send('User created successfully');
         } else {
             res.status(400).json({ error: 'Bad Request: Missing or invalid data' });
-;
         }
     } catch (error) {
         console.error(error);
