@@ -11,6 +11,7 @@ import Models from "./components/Models";
 import Testimonials from "./components/Testimonials";
 import OurTeam from "./components/OurTeam";
 import Contact from "./components/Contact";
+import Careers from "./components/Careers";
 
 const defaultAuthValue = null
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="testimonials" element={<Testimonials />} />
         <Route path="our-team" element={<OurTeam />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="careers" element={<Careers />} />
       </Route>
     )
   );

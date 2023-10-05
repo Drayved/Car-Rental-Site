@@ -12,9 +12,15 @@ const Footer = () => {
             </div>
             <div className="w-full md:w-1/4 mb-12">
               <h1 className="text-2xl font-bold mb-4">COMPANY</h1>
-              <p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">Careers</p>
-              <Link to="/about"><p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">About</p></Link>
-              <Link to="/contact"><p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">Contact</p></Link>
+              <Link to="/careers">
+                <p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">Careers</p>
+              </Link>
+              <Link to="/about">
+                <p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">About</p>
+              </Link>
+              <Link to="/contact">
+                <p className="mb-2 cursor-pointer max-w-[3.5rem] mx-auto ">Contact</p>
+              </Link>
             </div>
             <div className="w-full md:w-1/4 mb-12 flex flex-wrap flex-col">
               <h1 className="text-2xl font-bold mb-4">WORKING HOURS</h1>
