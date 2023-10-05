@@ -5,7 +5,7 @@ import PageHeader from "./PageHeader"
 const Careers = () => {
 
     return(
-        <div>
+        <div className="mt-20">
             <div>
                 <PageHeader />
             </div>
@@ -37,13 +37,13 @@ const Careers = () => {
                 </form>
             </div>
             
-            <div className="flex flex-col lg:flex-row lg:max-w-[90%] 2xl:max-w-[70rem] gap-10 mx-auto mt-24">
-                <div className="bg-blue-900  text-white lg:w-[30rem] h-[30rem] ">
+            <div className="flex flex-col lg:flex-row lg:max-w-[70rem]  gap-10 mx-auto mt-24">
+                <div className="bg-blue-900  text-white  h-[30rem] lg:w-[35rem] lg:h-[35rem] ">
                     
-                    <h3 className="text-center italic mr-48 pt-16 text-2xl transform -rotate-10 mt-20 " style={{ transform: 'rotate(-5deg)', transformOrigin: 'left bottom' } as React.CSSProperties}>Never Miss an</h3>
+                    <h3 className="text-center italic mr-48 pt-16 text-2xl transform -rotate-10 mt-20 xl:mt-28 " style={{ transform: 'rotate(-5deg)', transformOrigin: 'left bottom' } as React.CSSProperties}>Never Miss an</h3>
                     <h1 className="text-center italic font-extrabold text-5xl mb-10 transform -rotate-10 " style={{ transform: 'rotate(-5deg)', transformOrigin: 'left bottom' } as React.CSSProperties}>
                         <span className="relative inlin-block">
-                            <img className="absolute -left-44" src="/images/checkmark.png" alt="" />
+                            <img className="absolute -left-12" src="/images/checkmark.png" alt="" />
                             Opportunity
                         </span>
                         
@@ -54,47 +54,50 @@ const Careers = () => {
                     </p>
                 </div>
 
-                <div className="w-[80%] lg:max-w-[30rem] mx-auto ">
+                <div className="max-w-[35rem] px-5 lg:px-0 lg:max-w-[30rem] mx-auto">
                     <h1 className="text-2xl text-blue-900 font-bold mt-10 lg:mt-0">Job Alerts</h1>
                     <p className="text-gray-500 mt-2 mb-5 font-bold">Fill out the form, and we'll take care of the rest.</p>
                     <form action="">
-                        <div className="flex border-b border-black ">
-                            <label className="mr-10" htmlFor="">First Name*</label>
-                            <input className="border " type="text" />
+                        <div className="flex border-b pt-1 border-black my-5">
+                            <label className="mr-10 w-32" htmlFor="">First Name*</label>
+                            <input className="border w-full" type="text" />
                         </div>
-                        <div className="flex border-b border-black ">
-                            <label className="mr-10" htmlFor="">Last Name*</label>
-                            <input className="border " type="text" />
+                        <div className="flex border-b border-black my-5">
+                            <label className="mr-10 w-32 pt-1" htmlFor="">Last Name*</label>
+                            <input className="border w-full" type="text" />
                         </div>
-                        <div className="flex border-b border-black ">
-                            <label className="mr-4" htmlFor="">Email Address*</label>
-                            <input className="border " type="email" />
+                        <div className="flex border-b border-black">
+                            <label className="mr-4 lg:mr-[1.1rem] w-40 pt-1" htmlFor="">Email Address*</label>
+                            <input className="border w-full" type="email" />
                         </div>
                         <div className="mt-7">
                             <h1 className="font-bold text-blue-900 mb-3">Areas of Interest*</h1>
-                            <p className="text-xs">
+                            <p className="text-xs lg:text-sm">
                                 Select a job category from the list of options. Search for a location 
                                 and select one from the list of suggestions. Finally, click “Add” to 
                                 create your job alert.
                             </p>
                         </div>
                         <div className="mt-3 ">
-                            <div className="border-b border-black">
-                                <label className="mr-5" htmlFor="">Job Category*</label>
-                                <select className="text-sm text-gray-400" name="" id="">
-                                    <option className="text-gray-100" value="">Select a Job Category</option>
+                            <div className="border-b border-black py-0.5 my-5">
+                                <label className="mr-5 " htmlFor="">Job Category*</label>
+                                <select className="text-sm w-full text-gray-400" name="" id="">
+                                    <option className="text-gray-100 " value="">Select a Job Category</option>
                                 </select>
                             </div>
                            
                             
-                                <div className="border-b border-black ">
-                                    <label className="mr-5" htmlFor="">Location</label>
-                                    <input className="text-sm " type="text" placeholder="Type to search for a Location" />
-                                    <button className="ml-24 border-2 border-gray-700 font-bold px-2 text-gray-800">Add</button>
+                                <div className="border-b border-black py-0.5 flex justify-between">
+                                    <div>
+                                        <label className="mr-5" htmlFor="">Location*</label>
+                                        <input className="text-sm flex-grow w-full" type="text" placeholder="Type to search for a Location" />
+                                    </div>
+                                   
+                                    <button className=" h-8 mt-4 border-2 border-gray-700 font-bold px-2 text-gray-800">Add</button>
                                 </div>
                                 
                             
-                            <p className="text-gray-400 text-xs mt-3 mb-2">
+                            <p className="text-gray-400 text-xs my-3">
                                 Once you’ve selected all of your areas of interest, 
                                 click “subscribe” to set up email alerts.
                             </p>
@@ -109,7 +112,7 @@ const Careers = () => {
             <div className="max-w-[55rem] lg:max-w-[73rem] mx-auto px-5 pt-12">
                 <h1 className="text-blue-900 font-bold text-2xl mt-10">Careers at Enterprise Holdings</h1>
                 <h4 className="text-blue-900 font-bold mt-2">We’re here to take your talents to new heights.</h4>
-                <p className="text-xs lg:text-base">
+                <p className="text-sm text-gray-500 lg:text-base mt-1">
                     Just what is it that you’re looking for from your career? Whether it’s constant 
                     growth and development, meaningful work, opportunities for promotion or just 
                     colleagues you can have fun with along the way, one thing is for certain; 
