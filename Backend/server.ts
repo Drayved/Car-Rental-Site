@@ -30,6 +30,11 @@ db.serialize(() => {
     `);
 });
 
+app.get('/', (_, res) => {
+    res.send('Welcome to the Car Rental');
+
+  });
+
 app.get('/users', (_, res) => {
   
     db.all('SELECT name FROM users', (err, rows) => {
