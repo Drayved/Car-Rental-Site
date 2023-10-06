@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
 
   return (
     <div className={`scroll-to-top ${isVisible ? 'visible' : ''}`} onClick={scrollToTop}>
-      <svg className='fill-white' xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+      <svg className='fill-white hover:fill-[#00a8f3] hover:bg-white hover:w-12 hover:h-10 hover:border hover:border-[#00a8f3] rounded-full' xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
     </div>
   );
 };

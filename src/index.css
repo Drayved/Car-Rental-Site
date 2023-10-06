@@ -9,6 +9,7 @@ html{
     background-color: #fff;
     z-index: -2;
     transition: width 5.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+    scroll-behavior: smooth;
 }
 
 

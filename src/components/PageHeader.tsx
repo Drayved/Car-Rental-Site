@@ -15,7 +15,7 @@ const PageHeader = () => {
                 
             </div>
             <div className="absolute w-screen pointer-events-none">
-                <img className="w-[100%] relative left-0 right-0 lg:left-72 h-[20rem] min-w-[100rem] z-0  -top-56 opacity-10" src="/images/page-header.jpg" alt="" />
+                <img className="w-[50rem] relative left-0 right-0 lg:left-[40rem] h-[20rem] min-w-[100rem] z-0  -top-56 opacity-10" src="/images/page-header.jpg" alt="" />
             </div>
         </div>
     )

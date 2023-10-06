@@ -16,9 +16,9 @@ const About = () => {
             
                 <PageHeader />
             
-            <div className="mt-72 gap-10 flex justify-center w-[90%]  mx-auto flex-col items-center xl:flex-row">
-                <img className=" mx-auto w-[100%]  h-[33rem] md:min-w-[33rem] md:w-[33rem]  min-w-[10rem]" src="/images/about-img.jpg" alt="" />
-                <div className="flex flex-col items-center mr-20   w-[100%]  md:w-[33rem] ml-16">
+            <div className="mt-52 gap-10 flex justify-center w-[95%] md:w-[60%]  mx-auto flex-col items-center xl:flex-row">
+                <img className="  w-[100%]  h-[33rem] md:min-w-[33rem] md:w-[33rem]  min-w-[20rem]" src="/images/about-img.jpg" alt="" />
+                <div className="flex flex-col    w-[100%]  md:w-[33rem] ">
                     <h4 className="text-lg font-bold">About Company</h4>
                     <h1 className="text-3xl font-bold">You start the engine and your adventure begins</h1>
                     <p className="text-gray-500 mt-3">
@@ -59,11 +59,11 @@ const About = () => {
                 </div>
 
             </div>
-            <div className="mt-72">
+            <div className="mt-44">
                 <PlanTrip />
             </div>
 
-            <div className="mt-[30rem] md:mt-0">
+            <div >
                 <ContactBanner />
             </div>
             

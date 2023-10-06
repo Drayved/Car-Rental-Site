@@ -18,16 +18,22 @@ const Contact = () => {
                     </p>
                     <div className="flex flex-col gap-5 mt-10 font-bold text-gray-600">
                         <div className="flex contact-phone-container hover:text-[#00a8f3] w-40">
-                            <img className="contact-phone w-6 h-6 mt-[19.5px] mr-2" src="/images/black-phone.png" alt="phone icon" />
-                            <p className="mt-5">(123) 456-7899</p>
+                            <a className="flex" href="tel:+1234567899">
+                                <img className="contact-phone w-6 h-6 mt-[19.5px] mr-2" src="/images/black-phone.png" alt="phone icon" />
+                                <p className="mt-5">(123) 456-7899</p>
+                            </a>
                         </div>
                         <div className="flex contact-email-container hover:text-[#00a8f3] w-60">
-                            <img className="contact-email w-6 h-6 mt-[19.5px] mr-2" src="/images/email.png" alt="" />
-                            <p className="mt-5">car-rental@car-rentals.com</p>
+                            <a className="flex" href="mailto:car-rental@car-rentals.com">
+                                <img className="contact-email w-6 h-6 mt-[19.5px] mr-2" src="/images/email.png" alt="" />
+                                <p className="mt-5">car-rental@car-rentals.com</p>
+                            </a>
                         </div>
                         <div className="flex contact-location-container hover:text-[#00a8f3] w-48">
-                            <img className="contact-location w-7 h-7 mt-[16px] mr-2" src="/images/location.png" alt="" />
-                            <p className="mt-5">Cincinnati, Ohio</p>
+                            <a className="flex" href="https://www.google.com/maps?q=Cincinnati,Ohio" target="_blank" rel="noopener noreferrer">
+                                <img className="contact-location w-7 h-7 mt-[16px] mr-2" src="/images/location.png" alt="" />
+                                <p className="mt-5">Cincinnati, Ohio</p>
+                            </a>
                         </div>
                         
                     </div>

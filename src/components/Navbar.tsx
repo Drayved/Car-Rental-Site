@@ -20,10 +20,8 @@ const Navbar = () => {
         setShowMenu(window.innerWidth >= 1024);
       };
   
-      // Listen for window resize events
       window.addEventListener("resize", handleResize);
   
-      // Remove the event listener when the component unmounts
       return () => {
         window.removeEventListener("resize", handleResize);
       };
@@ -52,37 +50,31 @@ const Navbar = () => {
 
     const handleAxiosError = (error: AxiosError) => {
       if (error.response) {
-        // Axios error with a response from the server
         if (error.response.status === 409) {
           alert("Username is taken. Please choose another.");
         } else {
           console.error("Error with response:", error.response.data);
         }
       } else if (error.request) {
-        // Axios error without a response from the server (e.g., network error)
         console.error("Error with no response:", error.message);
       } else {
-        // Other errors
         console.error("Unknown error:", error);
       }
     };
     
-    // Your handleRegister function
+
     const handleRegister = async () => {
       try {
         console.log(formData);
         const response = await axios.post("http://localhost:3000/users", formData);
-    
         if (response.status === 201) {
           alert("User registered successfully")
           console.log("User registered successfully");
         }
       } catch (error) {
         if (axios.isAxiosError(error)) {
-          // Handle Axios errors using the custom error handler
           handleAxiosError(error);
         } else {
-          // Handle other errors here
           console.error("Unknown error:", error);
         }
       }
@@ -92,7 +84,7 @@ const Navbar = () => {
       try {
         const response = await axios.post("http://localhost:3000/users/login", formData);
 
-        if (response.data === "Success") {
+        if (response.data === "Login successful") {
           console.log("User signed in successfully");
           setSignedIn(true)
         } else {
@@ -133,50 +125,50 @@ const Navbar = () => {
                   </div>
             </div>
 
-            <div className="">
+            
               <ul onClick={toggleMenu} className={`small-nav-container ${showMenu ? "active" : ""}`}>
-                <li>
+                <li className="hover:text-[#00a8f3]">
                   <Link to="/">Home</Link>
                 </li>
-                <li>
+                <li className="hover:text-[#00a8f3]" >
                   <Link to="/about">About</Link>
                 </li>
-                <li>
+                <li className="hover:text-[#00a8f3]">
                   <Link to="/models">Vehicle Models</Link>
                 </li>
-                <li>
+                <li className="hover:text-[#00a8f3]">
                   <Link to="/testimonials">Testimonials</Link>
                 </li>
-                <li>
+                <li className="hover:text-[#00a8f3]">
                   <Link to='/our-team'>Our Team</Link>
                 </li>
-                <li>
+                <li className="hover:text-[#00a8f3]">
                   <Link to="/contact">Contact</Link>
                 </li>
               </ul>
-            </div>
+            
 
            
            
         </div>
       ) : (
         <ul onClick={toggleMenu} className="nav-container -mt-7">
-          <li>
+          <li  className="hover:text-[#00a8f3]">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li  className="hover:text-[#00a8f3]">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li  className="hover:text-[#00a8f3]">
             <Link to="/models">Vehicle Models</Link>
           </li>
-          <li>
+          <li  className="hover:text-[#00a8f3]">
             <Link to="/testimonials">Testimonials</Link>
           </li>
-          <li>
+          <li  className="hover:text-[#00a8f3]">
             <Link to='/our-team'>Our Team</Link>
           </li>
-          <li>
+          <li  className="hover:text-[#00a8f3]">
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
@@ -215,8 +207,12 @@ const Navbar = () => {
                   </div>
                     :
                     <div>
-                      <button onClick={handleSignIn} className="mr-10 font-bold mt-4 w-16">Sign In</button>
-                      <button onClick={handleRegister} className="bg-[#00a8f3] mt-5 text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
+                      <button onClick={handleSignIn} className="mr-10 font-bold mt-4 w-16 hover:text-[#00a8f3]">
+                        Sign In
+                      </button>
+                      <button onClick={handleRegister} className="bg-[#00a8f3] hover:bg-white hover:border hover:border-[#00a8f3] hover:text-[#00a8f3] mt-5 text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">
+                        Register
+                      </button>
                      
                     </div>
                    
@@ -231,8 +227,10 @@ const Navbar = () => {
       </div>
       ) : (
         <div className="absolute right-10 top-5 md:right-[5%] lg:right-[5%] 2xl:right-[18%]">
-          <button onClick={toggleSignIn} className="mr-6 font-bold">Sign In</button>
-          <button onClick={toggleRegister} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Register</button>
+          <button onClick={toggleSignIn} className="mr-6 font-bold hover:text-[#00a8f3] ">Sign In</button>
+          <button onClick={toggleRegister} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm hover:bg-white hover:border hover:border-[#00a8f3] hover:text-[#00a8f3] ">
+            Register
+          </button>
           {showSignIn && (
             <div className="absolute right-0 top-24 shadow-sm bg-white rounded-sm p-5  w-[100%] md:w-[40rem]">
               <div className="border border-[#00a8f3] py-5 px-10 md:py-10 mx-auto  ">
@@ -259,10 +257,14 @@ const Navbar = () => {
                  {signedIn ? 
                   <div className="flex flex-col mx-auto items-center">
                     <p className="text-[#00a8f3] font-bold text-center mb-2">Signed in as {formData.name}</p>
-                    <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Sign Out</button>
+                    <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm hover:bg-white hover:border hover:border-[#00a8f3] hover:text-[#00a8f3]">
+                      Sign Out
+                    </button>
                   </div>
                   :
-                  <button onClick={registerClicked ? handleRegister : handleSignIn} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">{registerClicked ? "Sign Up" : "Sign In"}</button>
+                  <button onClick={registerClicked ? handleRegister : handleSignIn} className="bg-[#00a8f3] hover:bg-white hover:border hover:border-[#00a8f3] hover:text-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">
+                    {registerClicked ? "Sign Up" : "Sign In"}
+                  </button>
                 }
               </div>
             </div>
