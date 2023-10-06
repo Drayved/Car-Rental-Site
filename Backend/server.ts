@@ -1,9 +1,8 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import cors from 'cors'
-import  sqlite3  from 'sqlite3';
+import sqlite3  from 'sqlite3';
 
-// Define an interface for the expected request body
 interface CreateUserRequestBody {
     id:number;
     name: string;
@@ -14,7 +13,6 @@ const app = express();
 
 app.use(cors({
     origin: 'http://localhost:5173',
-    // You can configure other CORS options as needed
 }));
 
 app.use(express.json())
@@ -33,7 +31,7 @@ db.serialize(() => {
 });
 
 app.get('/users', (_, res) => {
-    // Retrieve users from the database
+  
     db.all('SELECT name FROM users', (err, rows) => {
         if (err) {
             console.error(err);
@@ -49,7 +47,6 @@ app.post('/users', async (req, res) => {
         const salt = await bcrypt.genSalt();
         const requestBody: CreateUserRequestBody = req.body;
 
-        // Check if the username already exists in the database
         db.get('SELECT * FROM users WHERE name = ?', [requestBody.name], (err, row) => {
             if (err) {
                 console.error(err);
@@ -66,7 +63,6 @@ app.post('/users', async (req, res) => {
                     return res.status(500).send('Internal Server Error');
                 }
 
-                // Insert the new user into the database
                 db.run('INSERT INTO users (name, password) VALUES (?, ?)', [requestBody.name, hashedPassword], (insertErr) => {
                     if (insertErr) {
                         console.error(insertErr);
