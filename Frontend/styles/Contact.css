@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .contact-phone-container:hover .contact-phone {
     content: url('/images/phone.png');
     @apply w-6 h-6 mt-[19.5px] mr-2
