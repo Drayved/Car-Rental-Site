@@ -12,7 +12,7 @@ interface CreateUserRequestBody {
 const app = express();
 
 app.use(cors({
-    origin: 'https://davids-car-rental.netlify.app',
+    origin: 'https://davids-car-rental-site.vercel.app',
 }));
 
 app.use(express.json())
