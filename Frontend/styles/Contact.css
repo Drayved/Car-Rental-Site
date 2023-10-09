@@ -14,5 +14,5 @@
 }
 
 .contact-btn-container:hover .contact-btn-img{
-    content: url('images/blue-send-message.png')
+    content: url('/images/blue-send-message.png')
 }
