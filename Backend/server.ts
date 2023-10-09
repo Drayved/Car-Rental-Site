@@ -3,6 +3,8 @@ import bcrypt from 'bcrypt';
 import cors from 'cors'
 import sqlite3  from 'sqlite3';
 
+console.log('Starting the server...')
+
 interface CreateUserRequestBody {
     id:number;
     name: string;
@@ -12,7 +14,7 @@ interface CreateUserRequestBody {
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://davids-car-rental.netlify.app',
 }));
 
 app.use(express.json())
