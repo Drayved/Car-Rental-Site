@@ -16,10 +16,9 @@ const express_1 = __importDefault(require("express"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const cors_1 = __importDefault(require("cors"));
 const sqlite3_1 = __importDefault(require("sqlite3"));
-console.log('Starting the server...');
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: 'https://davids-car-rental.netlify.app',
+    origin: 'https://davids-car-rental-site.vercel.app',
 }));
 app.use(express_1.default.json());
 const db = new sqlite3_1.default.Database('users.db');
