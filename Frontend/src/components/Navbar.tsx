@@ -66,7 +66,7 @@ const Navbar = () => {
     const handleRegister = async () => {
       try {
         console.log(formData);
-        const response = await axios.post("https://car-rental-site-loi58btug-drayved.vercel.app/users", formData);
+        const response = await axios.post("https://car-rental-site-72kb612n0-drayved.vercel.app/users", formData);
         if (response.status === 201) {
           alert("User registered successfully")
           console.log("User registered successfully");
@@ -82,7 +82,7 @@ const Navbar = () => {
   
     const handleSignIn = async () => {
       try {
-        const response = await axios.post("https://car-rental-site-loi58btug-drayved.vercel.app/users/login", formData);
+        const response = await axios.post("https://car-rental-site-72kb612n0-drayved.vercel.app/users/login", formData);
 
         if (response.data === "Login successful") {
           console.log("User signed in successfully");
