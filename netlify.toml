@@ -1,4 +1,4 @@
 [build]
-  base = "client"
-  command = "cd Fronted && npm run build"
+  base = "Frontend"
+  command = "npm run build"
   publish = "build"
