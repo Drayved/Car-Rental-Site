@@ -15,12 +15,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.handler = void 0;
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const users = [];
+const corsHeaders = {
+    'Access-Control-Allow-Origin': 'https://davids-car-rental-site.vercel.app',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+    'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+    'Access-Control-Allow-Credentials': 'true',
+};
 function handler(event) {
     return __awaiter(this, void 0, void 0, function* () {
         if (event.httpMethod === 'GET' && event.path === '/') {
             return {
                 statusCode: 200,
                 body: JSON.stringify('Welcome to the Car Rental'),
+                headers: corsHeaders
             };
         }
         if (event.httpMethod === 'GET' && event.path === '/users') {
@@ -28,6 +35,7 @@ function handler(event) {
             return {
                 statusCode: 200,
                 body: JSON.stringify(userNames),
+                headers: corsHeaders
             };
         }
         if (event.httpMethod === 'POST' && event.path === '/users') {
@@ -38,6 +46,7 @@ function handler(event) {
                 return {
                     statusCode: 409,
                     body: JSON.stringify({ error: 'Username taken' }),
+                    headers: corsHeaders
                 };
             }
             // Hash the password
@@ -59,6 +68,7 @@ function handler(event) {
                 return {
                     statusCode: 404,
                     body: 'User not found',
+                    headers: corsHeaders
                 };
             }
             const isPasswordValid = yield bcryptjs_1.default.compare(password, user.password);
@@ -66,18 +76,21 @@ function handler(event) {
                 return {
                     statusCode: 200,
                     body: 'Login successful',
+                    headers: corsHeaders
                 };
             }
             else {
                 return {
                     statusCode: 401,
                     body: 'Incorrect password',
+                    headers: corsHeaders
                 };
             }
         }
         return {
             statusCode: 404,
             body: 'Not Found',
+            headers: corsHeaders
         };
     });
 }
