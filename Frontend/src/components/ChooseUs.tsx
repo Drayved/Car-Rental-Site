@@ -10,8 +10,8 @@ const ChooseUs = () => {
 
             <div className="flex flex-col lg:flex-row text-center lg:text-left lg: mx-auto">
                 <div className="flex flex-col ">
-                    <h4 className="font-semibold mb-2 text-xl lg:text-left">Why Choose Us</h4>
-                    <h1 className="font-bold text-4xl mb-5 lg:w-[95%] lg:text-left">Best valued deals you will ever find</h1>
+                    <h4 className="font-semibold mb-2 text-xl text-left ml-5 lg:ml-0">Why Choose Us</h4>
+                    <h1 className="font-bold text-4xl mb-5 lg:w-[95%] text-left ml-5 lg:ml-0">Best valued deals you will ever find</h1>
                     <p className="lg:w-[30rem] w-[90%] text-lg text-gray-500 mx-auto text-left">Discover the best deals you'll ever find with our unbeatable offers. 
                         We're dedicated to providing you with the best value for your money, 
                         so you can enjoy top-quality services and products without breaking 

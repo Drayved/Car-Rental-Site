@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios, { AxiosError } from 'axios';
-
+import { registerUser, signInUser, signUserOut } from '../../auth'
 
 
 const Navbar = () => {
@@ -10,9 +9,11 @@ const Navbar = () => {
     const [registerClicked, setRegisterClicked] = useState(false)
     const [signedIn, setSignedIn] = useState(false)
     const [formData, setFormData] = useState({
-      name: "",
+      email: "",
       password: "",
     });
+
+    
     
 
     useEffect(() => {
@@ -33,7 +34,7 @@ const Navbar = () => {
 
     const toggleSignIn = () => {
       setRegisterClicked(false)
-      setShowSignIn(true)
+      setShowSignIn(!showSignIn)
       if(showSignIn && !registerClicked){
         setShowSignIn(false)
       }
@@ -48,57 +49,45 @@ const Navbar = () => {
       }
     }
 
-    const handleAxiosError = (error: AxiosError) => {
-      if (error.response) {
-        if (error.response.status === 409) {
-          alert("Username is taken. Please choose another.");
+
+    const handleRegister = async () => {
+      const { email, password } = formData;
+      try {
+        await registerUser(email, password);
+        // Registration was successful, you can set a success message here.
+        console.log('Registration successful!');
+        
+        // Automatically sign in the user.
+        await signInUser(email, password);
+        setSignedIn(true);
+      } catch (error) {
+        if (error instanceof Error && error.name === 'MyCustomError') {
+          console.error(error.message);
         } else {
-          console.error("Error with response:", error.response.data);
+          console.error('Unknown error:', error);
         }
-      } else if (error.request) {
-        console.error("Error with no response:", error.message);
-      } else {
-        console.error("Unknown error:", error);
       }
     };
     
-
-    const handleRegister = async () => {
+  
+    const handleSignIn = async () => {
+      const { email, password } = formData;
       try {
-        console.log(formData);
-        const response = await axios.post("https://radiant-cannoli-b54c2c.netlify.app/.netlify/functions/index/users", formData);
-        if (response.status === 201) {
-          alert("User registered successfully")
-          console.log("User registered successfully");
-        }
+        await signInUser(email, password);
+        setSignedIn(true);
       } catch (error) {
-        if (axios.isAxiosError(error)) {
-          handleAxiosError(error);
+        if (error instanceof Error && error.name === 'MyCustomError') {
+          console.error(error.message);
         } else {
-          console.error("Unknown error:", error);
+          console.error('Unknown error:', error);
         }
       }
     };
   
-    const handleSignIn = async () => {
-      try {
-        const response = await axios.post("https://radiant-cannoli-b54c2c.netlify.app/.netlify/functions/index/login", formData);
-
-        if (response.data === "Login successful") {
-          console.log("User signed in successfully");
-          setSignedIn(true)
-        } else {
-          console.error("Sign-in failed. Server response:", response.data);
-        }
-      } catch (error) {
-        console.error("Error signing in", error);
-      }
-    };
-
     const handleSignOut = () => {
-      setSignedIn(false)
-    }
-
+      signUserOut();
+      setSignedIn(false);
+    };
   return (
     <div>
     <div className="sticky top-0 left-0 right-0 z-20" >
@@ -182,13 +171,13 @@ const Navbar = () => {
                 <p className="absolute top-1 bg-white p-2">{signedIn ? `Signed in` : `Sign In` }</p>
               
                 <div className={`flex flex-col gap-3 mb-5 ${signedIn ? "hidden" : ""}`}>
-                  <label className="text-left mb-[-10px]">Username</label>
+                  <label className="text-left mb-[-10px]">Email</label>
                   <input
                     className="p-2 shadow-sm shadow-black "
-                    type="text" 
-                    placeholder="Username" 
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    type="email" 
+                    placeholder="Email" 
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                   <label className="text-left mb-[-10px]">Password:</label>
                   <input
@@ -202,8 +191,9 @@ const Navbar = () => {
                 <div className="flex">
                   {signedIn ? 
                   <div className="flex flex-col mx-auto">
-                    <p className="text-[#00a8f3] font-bold mb-2">Signed in as {formData.name}</p>
-                    <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm">Sign Out</button>
+                    <p className="text-[#00a8f3] font-bold mb-2">Signed in as {formData.email}</p>
+                    {registerClicked && <p>User registered successfully</p>}
+                    <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm mx-auto">Sign Out</button>
                   </div>
                     :
                     <div>
@@ -237,13 +227,13 @@ const Navbar = () => {
                 <p className="absolute top-1 bg-white p-2">{registerClicked ? "Sign up" : "Sign In"}</p>
               
                 <div className={`flex flex-col gap-3 mb-5 ${signedIn ? "hidden" : "flex"}`}>
-                  <label className="text-left mb-[-10px]">Username:</label>
+                  <label className="text-left mb-[-10px]">Email:</label>
                   <input
                     className="p-2 shadow-sm shadow-gray-400"
                     type="text"
-                    placeholder="Username"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                   <label className="text-left mb-[-10px]">Password:</label>
                   <input
@@ -256,7 +246,7 @@ const Navbar = () => {
                 </div>
                  {signedIn ? 
                   <div className="flex flex-col mx-auto items-center">
-                    <p className="text-[#00a8f3] font-bold text-center mb-2">Signed in as {formData.name}</p>
+                    <p className="text-[#00a8f3] font-bold text-center mb-2">Signed in as {formData.email}</p>
                     <button onClick={handleSignOut} className="bg-[#00a8f3] text-white h-10 w-28 font-bold rounded-sm shadow-[#00a8f3] shadow-sm hover:bg-white hover:border hover:border-[#00a8f3] hover:text-[#00a8f3]">
                       Sign Out
                     </button>

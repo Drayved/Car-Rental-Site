@@ -11,9 +11,9 @@ const ChooseCar = () => {
 
     return(
         <div className="w-screen ">
-            <div className="text-center">
-                <h1 className="text-3xl mb-4 text-gray-700 font-semibold">Vehicle Models</h1>
-                <h1 className="font-bold text-5xl mb-4">Our rental fleet</h1>
+            <div className="md:text-center">
+                <h1 className="text-3xl mb-4 text-gray-700 font-semibold ml-5 md:ml-0">Vehicle Models</h1>
+                <h1 className="font-bold text-5xl mb-4 ml-5 md:ml-0">Our rental fleet</h1>
                 <p className="max-w-2 text-lg text-gray-500 w-[90%] md:w-[35rem] mx-auto text-left md:text-center">Choose from a variety of our amazing vehicles 
                     to rent for your next adventure or business trip
                 </p>
@@ -36,7 +36,7 @@ const ChooseCar = () => {
                 <div className="w-full flex flex-col md:flex-row">
 
                 <div className="w-full sm:mt-0 h-full mb-6  flex md:items-start xl:mr:0 xl:mb-0">
-                  <img className="xl:flex car-imgs mx-auto my-auto mt-12 h-96 md:mt-32 w-[100%] max-w-[40rem] " src={selectedVehicle.imageSrc} alt={selectedVehicle.name} />  
+                  <img className="xl:flex car-imgs mx-auto my-auto mt-12 h-auto md:mt-32 w-[100%] max-w-[40rem] " src={selectedVehicle.imageSrc} alt={selectedVehicle.name} />  
                 </div>
                 
                                 
