@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { registerUser, signInUser, signUserOut } from '../../auth'
+import { FirebaseError } from "firebase/app";
 
 
 const Navbar = () => {
@@ -8,13 +9,18 @@ const Navbar = () => {
     const [showSignIn, setShowSignIn] = useState(false)
     const [registerClicked, setRegisterClicked] = useState(false)
     const [signedIn, setSignedIn] = useState(false)
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({
       email: "",
       password: "",
     });
 
     
-    
+    const clearMessages = () => {
+      setSuccessMessage('')
+      setErrorMessage('')
+    }
 
     useEffect(() => {
       const handleResize = () => {
@@ -54,16 +60,26 @@ const Navbar = () => {
       const { email, password } = formData;
       try {
         await registerUser(email, password);
-        // Registration was successful, you can set a success message here.
-        console.log('Registration successful!');
-        
-        // Automatically sign in the user.
+
+        setSuccessMessage('User successfully registered');
+        setErrorMessage('')
+
         await signInUser(email, password);
         setSignedIn(true);
-      } catch (error) {
-        if (error instanceof Error && error.name === 'MyCustomError') {
-          console.error(error.message);
+
+        
+      } catch (error: unknown) {
+        if (error instanceof FirebaseError) {
+          if (error.code === 'auth/email-already-in-use') {
+            // Handle the 'email already in use' error
+            setErrorMessage('An account with that email has already been registered');
+            setSuccessMessage('');
+          } else {
+            // Handle other Firebase authentication errors
+            console.error('Firebase Authentication error:', error);
+          }
         } else {
+          // Handle other unknown errors
           console.error('Unknown error:', error);
         }
       }
@@ -75,6 +91,7 @@ const Navbar = () => {
       try {
         await signInUser(email, password);
         setSignedIn(true);
+        clearMessages();
       } catch (error) {
         if (error instanceof Error && error.name === 'MyCustomError') {
           console.error(error.message);
@@ -87,7 +104,10 @@ const Navbar = () => {
     const handleSignOut = () => {
       signUserOut();
       setSignedIn(false);
+      clearMessages()
     };
+
+
   return (
     <div>
     <div className="sticky top-0 left-0 right-0 z-20" >
@@ -169,7 +189,10 @@ const Navbar = () => {
             <div className="absolute  md:right-0 top-24 shadow-md bg-white rounded-sm p-5 h-auto w-[100%] md:w-[40rem]">
               <div className="border border-[#00a8f3] py-5 h-full px-10 md:py-10 mx-auto w-[90%] ">
                 <p className="absolute top-1 bg-white p-2">{signedIn ? `Signed in` : `Sign In` }</p>
-              
+
+                {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+                {successMessage && <p className="text-green-500 text-center">{successMessage}</p>}
+
                 <div className={`flex flex-col gap-3 mb-5 ${signedIn ? "hidden" : ""}`}>
                   <label className="text-left mb-[-10px]">Email</label>
                   <input

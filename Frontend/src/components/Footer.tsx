@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
+  const [submitClicked, setSubmitClicked] = useState(false)
   
 
   const validateEmail = (email: string) => {
@@ -14,20 +15,16 @@ const Footer = () => {
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-  
-    if (!validateEmail(email)) {
-      alert('Please enter a valid email address')
-      return;
-    }
-
-    alert('Successfully Subscribed!');
+    setSubmitClicked(true)
+    setTimeout(() => {
+      setSubmitClicked(false)
+    }, 3000);
   };
   
-
     return (
       <footer className="flex ">
         <div className="relative z-20 w-screen mt-32 bg-white shadow-sm shadow-black text-center">
-          <div className="container mx-auto py-12 flex flex-wrap justify-between">
+          <div className="container mx-auto py-10 flex flex-wrap justify-between">
             <div className="-mr-16 md:pr-12 w-full md:w-1/4 mb-12 ">
               <h1 className="mb-3 text-2xl font-bold"><span className="font-bold">CAR </span>Rental</h1>
               
@@ -70,6 +67,8 @@ const Footer = () => {
                     setEmail(e.target.value);
                   }}
                 />
+                {submitClicked && !validateEmail(email) &&  <p className='text-red-500 text-xs mt-1'>Please enter a valid email address</p>}
+                {submitClicked && validateEmail(email) &&   <p className='text-green-500 text-xs mt-1'>Successfully subscribed!</p>}
                 <button
                   className="w-full md:w-[12rem] lg:w-[18rem] bg-[#00a8f3] text-white text-lg py-2 mt-2 font-bold hover:bg-white hover:text-[#00a8f3] hover:border hover:border-[#00a8f3]"
                   type="submit"

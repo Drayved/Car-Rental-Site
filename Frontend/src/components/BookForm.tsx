@@ -1,6 +1,17 @@
-
+import { useState } from "react";
+import RegisterForm from "./RegisterForm";
 
 const BookForm = () => {
+  const [showRegisterForm, setShowRegisterForm] = useState(false)
+
+  const handleSearch = () => {
+    
+    setShowRegisterForm(true)
+  };
+
+  const closeRegisterForm = () => {
+    setShowRegisterForm(false);
+  };
 
     return (
       <>
@@ -65,10 +76,21 @@ const BookForm = () => {
               <input className="book-dropdowns" name="Select your car type" type="date"></input>
             </div>
             <div className="select-container">
-              <button className="form-btn">Search</button>
+              <button 
+                type="button" 
+                className="mt-8 h-11 text-center py-[0.7rem] text-white font-bold w-[100%] rounded-sm shadow-md shadow-blue-200  bg-[#00a8f3]" 
+                onClick={handleSearch}>
+                Search
+              </button>
             </div>
           </form>
         </div>
+
+        {showRegisterForm && (
+          <div>
+            <RegisterForm onClose={closeRegisterForm}/>
+          </div>
+        )}
       </>
     );
   };
