@@ -4,7 +4,7 @@ const Hero = () => {
 
     return(
         
-        <div className="top-section-container  mx-auto text-left ">
+        <div className="top-section-container mx-auto text-left ">
             <img className="absolute right-0 top-0 z-10 pointer-events-none hidden md:flex h-[65%]  min-w-[30rem] opacity-50" src="/images/hero-bg.png" alt="" />
             <div className="flex ml-2">
                 <div className="flex flex-col md:min-w-[25rem] relative z-10  md:mt-28">

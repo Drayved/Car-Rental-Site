@@ -20,3 +20,12 @@ html{
 .team-container{
     box-shadow: 10px 12px 15px 3px rgb(164, 163, 163);
 }
+
+.scroll-lock {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
