@@ -48,7 +48,7 @@
 
 /* Form */
 
-.bg-form{
+.form{
     
     box-shadow: 0px 0px 20px 1px rgb(233, 230, 230);
 }
@@ -173,9 +173,4 @@
   .blue-car{
     @apply -right-[5%]
   }
-
-  .blue-car-container{
-    
-  }
 }
-
