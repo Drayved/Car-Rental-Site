@@ -9,7 +9,8 @@ type RegisterFormProps = {
     pickupDate: string;
     dropOffDate: string;
     handleButtonClicked: () => void;
-    buttonClicked: boolean
+    buttonClicked: boolean,
+    
   };
 
   type FormFields = {
@@ -24,7 +25,8 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
    pickupDate,
    dropOffDate,
    buttonClicked,
-   handleButtonClicked
+   handleButtonClicked,
+   
   }) => {
 
   const [agreeTerms, setAgreeTerms] = useState(false);
@@ -81,10 +83,10 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
             <h2 className="text-2xl font-bold ">COMPLETE RESERVATION</h2>
 
             <button
-            onClick={onClose}
-            className="text-white bg-red-500 rounded-full py-2 px-4 hover:bg-red-600 cursor-pointer"
-            >
-            X
+              onClick={onClose}
+              className="text-white bg-red-600 rounded-full py-2 px-4 hover:bg-red-700 cursor-pointer"
+              >
+              X
             </button>
            
         </div>
@@ -160,8 +162,8 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
               </div>
                   
               <div className="mr-12">
-                <h2 className="text-xl relative top-5 md:-top-[3rem]  font-bold">Car - <span className="text-blue-700">{carType}</span></h2>
-                <img className="w-96 mt-10 md:mt-0" src={selectedVehicle?.imageSrc} alt="" />
+                <h2 className="text-xl relative top-5 md:-top-[3rem] text-center  font-bold">Car - <span className="text-blue-700">{carType}</span></h2>
+                <img className="w-96 mx-auto mt-10 md:mt-0" src={selectedVehicle?.imageSrc} alt="" />
               </div>
 
             </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import RegisterForm from "./RegisterForm";
 import { ChangeEvent } from "react";
+import { useRef } from "react"
 
 const BookForm = () => {
   const [showRegisterForm, setShowRegisterForm] = useState(false)
@@ -10,10 +11,16 @@ const BookForm = () => {
   const [pickupDate, setPickupDate] = useState("");
   const [dropOffDate, setDropOffDate] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false)
+  const [formFilledOut, setFormFilledOut] = useState(true);
+  const bookFormRef = useRef(null) as React.RefObject<HTMLDivElement>
 
   const handleSearch = () => {
-    
-    setShowRegisterForm(true)
+    if (!carType || !pickupLocation || !dropOffLocation || !pickupDate || !dropOffDate) {
+      setFormFilledOut(false);
+    } else {
+      setFormFilledOut(true);
+      setShowRegisterForm(true);
+    }
   };
 
   const closeRegisterForm = () => {
@@ -42,13 +49,17 @@ const BookForm = () => {
     setDropOffDate(e.target.value);
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClicked = () => {
     setButtonClicked(true)
+    setShowRegisterForm(false);
+    if (bookFormRef.current) {
+      bookFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
     return (
       <>
-        <div className=" bg-form  px-2 w-[90%] py-8 mx-auto">
+        <div ref={bookFormRef} className=" bg-form  px-2 w-[90%] py-8 mx-auto">
           <h1 className="text-2xl font-bold ml-4 mb-5">Book a Car</h1>
           <form className="flex flex-wrap text-gray-500" action="">
             <div className="select-container">
@@ -135,20 +146,31 @@ const BookForm = () => {
           </form>
         </div>
 
-        {showRegisterForm && (
-          <div>
-            <RegisterForm 
-              onClose={closeRegisterForm}
-              carType={carType}
-              pickupLocation={pickupLocation}
-              dropOffLocation={dropOffLocation}
-              pickupDate={pickupDate}
-              dropOffDate={dropOffDate}
-              handleButtonClick={handleButtonClick}
-              buttonClicked={buttonClicked}
-            />
+        {formFilledOut ? (
+          showRegisterForm && (
+            <div>
+              <RegisterForm
+                onClose={closeRegisterForm}
+                carType={carType}
+                pickupLocation={pickupLocation}
+                dropOffLocation={dropOffLocation}
+                pickupDate={pickupDate}
+                dropOffDate={dropOffDate}
+                handleButtonClicked={handleButtonClicked}
+                buttonClicked={buttonClicked}
+              />
+            </div>
+          )
+        ) : (
+          <div className="text-red-500 bg-red-100 text-center absolute -mt-44 left-0 right-0 w-72 mx-auto">
+            All forms must be filled out.
           </div>
         )}
+        {buttonClicked && (
+        <div className="text-green-500 bg-green-100 text-center absolute -mt-44 left-0 right-0 w-96 mx-auto">
+          Check your email for your reservation confirmation.
+        </div>
+      )}
       </>
     );
   };

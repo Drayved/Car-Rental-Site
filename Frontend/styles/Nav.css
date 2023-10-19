@@ -71,7 +71,7 @@
 
 .menu-btn:hover .menu-btn-burger::before, 
 .menu-btn:hover .menu-btn-burger::after{
-  @apply bg-[#00a8f3] border-[#00a8f3] transition-colors duration-500 cursor-pointer
+  @apply bg-[#00a8f3] border-[#00a8f3]  cursor-pointer
 }
 
 
