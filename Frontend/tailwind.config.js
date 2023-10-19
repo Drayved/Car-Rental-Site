@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'form': "url('/images/form-bg.png')",
+        'form': "url('./images/form-bg.png')",
       },
       screens: {
         xxs: "360px", 
