@@ -50,12 +50,24 @@ const BookForm = () => {
   };
 
   const handleButtonClicked = () => {
-    setButtonClicked(true)
+    setButtonClicked(true);
     setShowRegisterForm(false);
+  
+    // Get the position of the BookForm component
     if (bookFormRef.current) {
-      bookFormRef.current.scrollIntoView({ behavior: "smooth" });
+      const bookFormPosition = bookFormRef.current.getBoundingClientRect().top;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+      // Calculate the position relative to the entire page's height
+      const absolutePosition = scrollTop + bookFormPosition;
+  
+      // Scroll back to the calculated position
+      window.scrollTo({
+        top: absolutePosition,
+        behavior: "smooth",
+      });
     }
-  }
+  };
 
     return (
       <>
@@ -162,12 +174,12 @@ const BookForm = () => {
             </div>
           )
         ) : (
-          <div className="text-red-500 bg-red-100 text-center absolute -mt-44 left-0 right-0 w-72 mx-auto">
+          <div className="text-red-500 bg-red-100 text-center w-[90%] md:w-72 mx-auto mt-2">
             All forms must be filled out.
           </div>
         )}
         {buttonClicked && (
-        <div className="text-green-500 bg-green-100 text-center absolute -mt-44 left-0 right-0 w-96 mx-auto">
+        <div className="text-green-500 bg-green-100 text-center w-[90%] md:w-96 mx-auto mt-2">
           Check your email for your reservation confirmation.
         </div>
       )}

@@ -79,9 +79,11 @@ const ChooseCar = () => {
                           <tfoot>
                             <tr>
                               <td colSpan={2}>
-                                <button className="bg-[#00a8f3] mt-3 w-full text-white h-12 text-2xl shadow-md shadow-black font-bold rounded-sm">
-                                  Reserve Now
-                                </button>
+                                <a href="#book-form-section">
+                                  <button className="bg-[#00a8f3] mt-3 w-full text-white h-12 text-2xl shadow-md shadow-black font-bold rounded-sm">
+                                    Reserve Now
+                                  </button>
+                                </a>
                               </td>
                             </tr>
                           </tfoot>

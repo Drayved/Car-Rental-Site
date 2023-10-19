@@ -83,7 +83,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
 
             <button
               onClick={onClose}
-              className="text-white bg-red-600 rounded-full py-2 px-4 hover:bg-red-700 cursor-pointer"
+              className="text-white  py-2 px-4 hover:text-red-600 cursor-pointer text-2xl"
               >
               X
             </button>
@@ -301,6 +301,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
           </label>
         </div>
         <div className="h-20 bg-gray-100 flex justify-center items-center mt-5">
+        <a href="#book-form-section">
           <button
             onClick={() => {
               if (isPartOfFormValid()) {
@@ -315,6 +316,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
           >
               Reserve Now
           </button>
+          </a>
         </div>
       </div>
       
