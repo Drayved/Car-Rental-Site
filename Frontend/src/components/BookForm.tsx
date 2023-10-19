@@ -71,7 +71,7 @@ const BookForm = () => {
 
     return (
       <>
-        <div ref={bookFormRef} className="form bg-[url('./images/form-bg.png')]  px-2 w-[90%] py-8 mx-auto">
+        <div ref={bookFormRef} className="form bg-[url('/images/form-bg.png')]  px-2 w-[90%] py-8 mx-auto">
           <h1 className="text-2xl font-bold ml-4 mb-5">Book a Car</h1>
           <form className="flex flex-wrap text-gray-500" action="">
             <div className="select-container">
