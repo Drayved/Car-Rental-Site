@@ -24,7 +24,6 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
    dropOffLocation,
    pickupDate,
    dropOffDate,
-   buttonClicked,
    handleButtonClicked,
    
   }) => {
