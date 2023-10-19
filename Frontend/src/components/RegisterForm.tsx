@@ -181,7 +181,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                   </label>
                   <input
                     required
-                    className="bg-gray-100 p-2 "
+                    className="bg-gray-100 p-2 border-gray-100 border"
                     type="text"
                     placeholder="Enter your first name"
                     onChange={(e) => handleFieldChange('firstName', e.target.value)}
@@ -194,7 +194,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                   </label>
                   <input
                     required 
-                    className="bg-gray-100 p-2 " 
+                    className="bg-gray-100 p-2 border-gray-100 border" 
                     type="text" 
                     placeholder="Enter your last name" 
                     onChange={(e) => handleFieldChange('lastName', e.target.value)}
@@ -209,7 +209,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                   </label>
                   <input
                     required 
-                    className="bg-gray-100 p-2 " 
+                    className="bg-gray-100 p-2 border-gray-100 border" 
                     type="text"
                     placeholder="Enter your phone number" 
                     onChange={(e) => handleFieldChange('phoneNumber', e.target.value)}
@@ -222,7 +222,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                   </label>
                   <input
                     required
-                    className="bg-gray-100 p-2 " 
+                    className="bg-gray-100 p-2 border-gray-100 border" 
                     type="text" 
                     placeholder="Enter your age" 
                     onChange={(e) => handleFieldChange('age', e.target.value)}
@@ -237,7 +237,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                 </label>
                 <input
                   required
-                  className="bg-gray-100 p-2 " 
+                  className="bg-gray-100 p-2 border-gray-100 border" 
                   type="text" 
                   placeholder="Enter your email" 
                   onChange={(e) => handleFieldChange('email', e.target.value)}
@@ -250,7 +250,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                 </label>
                 <input 
                   required 
-                  className="bg-gray-100 p-2 " 
+                  className="bg-gray-100 border-gray-100 border p-2 " 
                   type="text" 
                   placeholder="Enter your street address" 
                   onChange={(e) => handleFieldChange('streetAddress', e.target.value)}
@@ -264,7 +264,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                   </label>
                   <input
                     required
-                    className="bg-gray-100 p-2 "
+                    className="bg-gray-100 p-2 border-gray-100 border"
                     type="text"
                     placeholder="Enter your city"
                     onChange={(e) => handleFieldChange('city', e.target.value)}
@@ -277,7 +277,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                   </label>
                   <input
                     required
-                    className="bg-gray-100 p-2 " 
+                    className="bg-gray-100 p-2 border-gray-100 border" 
                     type="text" 
                     placeholder="Enter your zip code" 
                     onChange={(e) => handleFieldChange('zipCode', e.target.value)}
