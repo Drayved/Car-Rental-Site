@@ -21,10 +21,11 @@ function App() {
     }
   }, [page]);
 
-  useEffect(() => {
-    localStorage.getItem('page')
- 
-  }, []);
+  const lastPage = localStorage.getItem('page');
+  
+  if (lastPage) {
+    window.location.pathname = lastPage;
+  }
 
   const router = createBrowserRouter(
     createRoutesFromElements(
