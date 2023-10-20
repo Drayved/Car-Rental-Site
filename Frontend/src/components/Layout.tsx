@@ -1,28 +1,32 @@
-import { Outlet, useNavigate } from "react-router-dom";
-import Footer from "./Footer"
-import Navbar from "./Navbar"
+import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-
-
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Layout = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  useEffect(() => {
+    localStorage.setItem("currentRoute", location.pathname);
+  }, [location.pathname]);
 
-    useEffect(() => {
-    // Save the current route path to local storage
-    localStorage.setItem("savedRoutePath", location.pathname);
-    }, [navigate]);
+  useEffect(() => {
+    const savedRoute = localStorage.getItem("currentRoute");
 
-    
-    return(
-        <>
-            <Navbar />
-            <Outlet />
-            <Footer />
-        </>
+    if (savedRoute) {
+      navigate(savedRoute);
+    }
+  }, [navigate]);
 
-    )
-}
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
-export default Layout
+export default Layout;
