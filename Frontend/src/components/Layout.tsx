@@ -1,24 +1,17 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Layout = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const { routeParam } = useParams();
 
   useEffect(() => {
-    localStorage.setItem("currentRoute", location.pathname);
-  }, [location.pathname]);
-
-  useEffect(() => {
-    const savedRoute = localStorage.getItem("currentRoute");
-
-    if (savedRoute) {
-      navigate(savedRoute);
+    if (routeParam) {
+      localStorage.setItem("currentRouteParam", routeParam);
     }
-  }, [navigate]);
+  }, [routeParam]);
 
   return (
     <>
