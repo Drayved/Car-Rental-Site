@@ -1,27 +1,52 @@
-# React + TypeScript + Vite
+# Car Rental Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A car rental web application built with React, TypeScript, Vite, Firebase, Tailwind CSS, and React Router, hosted on Netlify.
 
-Currently, two official plugins are available:
+![Demo Screenshot](![image](https://github.com/Drayved/Car-Rental-Site/assets/104113643/193da6d0-aefe-4b7a-98ac-ffb5b81af2b3)
+)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This project is a template for a car rental website, showcasing the integration of various technologies and functionalities. Users can register and log in using Firebase authentication, browse available cars, view car details, and make reservations. It's a fully functional web application designed to serve as a starting point for real-world projects.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- User authentication with Firebase (Register and Login).
+- Browse available cars and view details.
+- Make car reservations.
+- Responsive and user-friendly design using Tailwind CSS.
+- Routing and navigation using React Router.
+- Developed with Vite for improved development experience.
+- Hosted on Netlify for easy deployment.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Getting Started
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To run this project locally or deploy it to your own Netlify instance, follow the steps below:
+
+### Installation
+
+1. Clone the repository:
+
+git clone https://github.com/yourusername/car-rental-project.git
+
+2. Navigate to the project directory:
+cd car-rental-project
+
+3. Install project dependencies:
+npm install
+
+4. To run the application locally, use the following command:
+npm start
+
+## Tech Stack
+- React
+- TypeScript
+- Vite
+- Firebase
+- Tailwind CSS
+- React Router
+- Netlify
+
+
+
+
