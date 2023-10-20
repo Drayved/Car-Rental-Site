@@ -1,6 +1,5 @@
-
-import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from "react-router-dom";
-import { useState, createContext} from "react"
+import { useEffect } from "react";
+import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements, useParams } from "react-router-dom";
 import Layout from "./components/Layout"
 import Landing from "./components/Landing";
 import "../styles/Nav.css"
@@ -13,18 +12,20 @@ import OurTeam from "./components/OurTeam";
 import Contact from "./components/Contact";
 import Careers from "./components/Careers";
 
-const defaultAuthValue = null
-
-export const AuthContext = createContext<{
-  placeHolder: string | null; 
-  setPlaceHolder: React.Dispatch<React.SetStateAction<string | null>>; 
-}>({
-  placeHolder: defaultAuthValue,
-  setPlaceHolder: () => {},
-});
-
 function App() {
-  const [placeHolder, setPlaceHolder] = useState<string | null>(defaultAuthValue)
+  const { page } = useParams();
+
+  useEffect(() => {
+    if (page) {
+      localStorage.setItem('page', page);
+    }
+  }, [page]);
+
+  const lastPage = localStorage.getItem('page');
+  
+  if (lastPage) {
+    window.location.pathname = lastPage;
+  }
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -41,9 +42,7 @@ function App() {
   );
 
   return (
-    <AuthContext.Provider value={{ placeHolder, setPlaceHolder }}>
       <RouterProvider router={router}/>
-    </AuthContext.Provider>
   )
 }
 
