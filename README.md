@@ -3,7 +3,7 @@
 A car rental web application built with React, TypeScript, Vite, Firebase, Tailwind CSS, and React Router, hosted on Netlify.
 
 ![Screenshot 1](/screenshots/screenshot1.JPG)
-![Screenshot 2](/screenshots/screenshot2.JPG)
+![Screenshot 2](/screenshots/screenshot.JPG)
 
 ## Overview
 
