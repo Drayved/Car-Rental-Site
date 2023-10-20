@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements, useParams } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Layout from "./components/Layout";
 import Landing from "./components/Landing";
 import "../styles/Nav.css";
@@ -13,21 +13,17 @@ import Contact from "./components/Contact";
 import Careers from "./components/Careers";
 
 function App() {
-  const { page } = useParams(); 
-
-  const [currentPage, setCurrentPage] = useState(page);
+  const { page } = useParams();
 
   useEffect(() => {
-    if (currentPage) {
-      localStorage.setItem('currentPage', currentPage);
+    if (page) {
+      localStorage.setItem('page', page);
     }
-  }, [currentPage]);
+  }, [page]);
 
   useEffect(() => {
-    const storedPage = localStorage.getItem('currentPage');
-    if (storedPage) {
-      setCurrentPage(storedPage);
-    }
+    localStorage.getItem('page')
+ 
   }, []);
 
   const router = createBrowserRouter(
