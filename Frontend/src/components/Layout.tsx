@@ -6,12 +6,20 @@ import { useParams } from "react-router-dom";
 
 const Layout = () => {
   const { routeParam } = useParams();
+ 
 
   useEffect(() => {
-    if (routeParam) {
-      localStorage.setItem("currentRouteParam", routeParam);
-    }
+    const currentRoute = window.location.pathname;
+    localStorage.setItem("currentRoute", currentRoute);
+
+    window.addEventListener("beforeunload", (event) => {
+      if (event.type === 'beforeunload') {
+        localStorage.setItem("currentRouteToNavigate", currentRoute);
+      }
+    });
   }, [routeParam]);
+
+
 
   return (
     <>
