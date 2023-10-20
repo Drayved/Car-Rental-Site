@@ -2,8 +2,8 @@
 
 A car rental web application built with React, TypeScript, Vite, Firebase, Tailwind CSS, and React Router, hosted on Netlify.
 
-![Demo Screenshot](![image](https://github.com/Drayved/Car-Rental-Site/assets/104113643/193da6d0-aefe-4b7a-98ac-ffb5b81af2b3)
-)
+![Screenshot 1](/screenshots/screenshot1.JPG)
+![Screenshot 2](/screenshots/screenshot2.JPG)
 
 ## Overview
 
