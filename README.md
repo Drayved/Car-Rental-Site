@@ -7,6 +7,7 @@ A car rental web application built with React, TypeScript, Vite, Firebase, Tailw
 
 ## Overview
 Live Demo: https://davids-car-rental.netlify.app
+
 This project is a template for a car rental website, showcasing the integration of various technologies and functionalities. Users can register and log in using Firebase authentication, browse available cars, view car details, and make reservations. It's a fully functional web application designed to serve as a starting point for real-world projects.
 
 ## Features
